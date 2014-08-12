@@ -1,0 +1,40 @@
+@import "syntax";
+
+/**
+ * Layout
+ */
+body {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	font-size: 17px;
+}
+.container {
+	max-width: 960px;
+}
+
+/**
+ * Navbar
+ */
+.navbar-brand {
+	font-family: 'Allura',cursive;
+	font-size: 32px;
+}
+.navbar-right {
+	> li > a {
+		padding-bottom: 0;
+	}
+}
+.navbar .fa-2x {
+	line-height: .66em;
+}
+
+/**
+ * Content
+ */
+.jumbotron,
+.jumbotron h1 {
+	font-family: 'Allura',cursive;
+}
+.jumbotron p {
+	font-size: 28px;
+}

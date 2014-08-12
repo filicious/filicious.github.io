@@ -1,0 +1,62 @@
+---
+title: Filicious - cooking files with flavor!
+---
+
+<div class="jumbotron">
+	<h1>Filicious</h1>
+	<p>Cooking files with flavor!</p>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h2>Start cooking&hellip;</h2>
+		{% highlight php startinline %}
+use Filicious\Local\LocalAdapter;
+use Filicious\Filesystem;
+
+$adapter    = new LocalAdapter();
+$filesystem = new Filesystem($adapter);
+
+$cauldron = $filesystem->getFile('/cauldron');
+$cauldron->createDirectory();
+		{% endhighlight %}
+	</div>
+
+	<div class="col-md-6">
+		<h2>&hellip;use a good recipe!</h2>
+		{% highlight php startinline %}
+$ingredients = $filesystem->getFile('/ingredients');
+
+foreach ($ingredients as $ingredient) {
+    $ingredient->moveTo($cauldron);
+}
+
+$stove = $cauldron->getPlugin('stove');
+$stove->heating();
+		{% endhighlight %}
+	</div>
+</div>
+
+<h2>Are you serious?</h2>
+
+<p>Yes we are! Using Filicious is like cooking for a good recipe.
+There is no need to use plain old functions, have you ever seen a function laying around in the kitchen?
+With Filicious everything is an object, like the cauldron, the ingredients or the stove. ;-)</p>
+
+<h2>How to start?</h2>
+
+<p>Using composer <code>require</code> command to add <code>filicious/core</code> to your <code>composer.json</code>.</p>
+
+{% highlight sh %}
+php composer.phar require filicious/core ~1.0
+{% endhighlight %}
+
+<p>Or adding the line manually to your <code>composer.json</code>.</p>
+
+{% highlight json %}
+{
+    "require": {
+        "filicious/core": "~1.0"
+    }
+}
+{% endhighlight %}

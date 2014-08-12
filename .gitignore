@@ -1,0 +1,8 @@
+# caches
+.sass-cache
+
+# generated site
+/_site
+
+# Gems
+/Gemfile.lock

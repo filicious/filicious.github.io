@@ -1,0 +1,20 @@
+---
+title: New cooking recipes!
+---
+
+<div class="jumbotron">
+	<h1>Get new cooking recipes!</h1>
+	<p>Freshly served!</p>
+</div>
+
+<ul>
+	{% for post in site.posts %}
+	<li>
+		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<p class="text-info">written on {{ post.date | date_to_long_string }} by
+			<a href="https://github.com/{{ site.data.authors[page.author].github }}">{{ post.author }}</a></p>
+		<p class="excerpt">{{ post.excerpt | strip_html }}</p>
+	</div>
+	</li>
+	{% endfor %}
+</ul>
