@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>filicious/core</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="css/template.css" rel="stylesheet" media="all">
+<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="js/bootstrap.js" type="text/javascript"></script><script src="js/template.js" type="text/javascript"></script><script src="js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="index.html">filicious/core</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="namespaces/Filicious.html"><i class="icon-th"></i> Filicious</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="hero-unit">
+<h1>filicious/core</h1>
+<h2>Documentation</h2>
+</div>
+<div class="row">
+<div class="span7">
+<div class="well"><ul class="nav nav-list">
+<li class="nav-header">Namespaces</li>
+<li><a href="namespaces/Filicious.html"><i class="icon-th"></i> Filicious</a></li>
+</ul></div>
+<div class="well"><ul class="nav nav-list">
+<li class="nav-header">Packages</li>
+<li><a href="packages/filicious-core.html"><i class="icon-folder-open"></i> filicious-core</a></li>
+</ul></div>
+<div class="well"><ul class="nav nav-list">
+<li class="nav-header">Api</li>
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Public API Methods</li>
+<li><a href="classes/File.html#getFilesystem" title="Get the filesystem this file belongs to.">File.getFilesystem</a></li>
+<li><a href="classes/File.html#getPathname" title="Returns the full abstracted pathname of this file within the containing
+filesystem.">File.getPathname</a></li>
+<li><a href="classes/File.html#getBasename" title="Returns the basename of this file, which is the string after the last
+forward slash of the pathname of this file.">File.getBasename</a></li>
+<li><a href="classes/File.html#getExtension" title="Return the extension of the filename.">File.getExtension</a></li>
+<li><a href="classes/File.html#getDirname" title="Return the dirname or parent name.">File.getDirname</a></li>
+<li><a href="classes/File.html#getParent" title="Return the parent file object.">File.getParent</a></li>
+<li><a href="classes/File.html#isFile" title="Checks if the file is a file.">File.isFile</a></li>
+<li><a href="classes/File.html#isDirectory" title="Checks if the file is a directory.">File.isDirectory</a></li>
+<li><a href="classes/File.html#getAccessTime" title="Returns the date and time at which the file was accessed last time.">File.getAccessTime</a></li>
+<li><a href="classes/File.html#setAccessTime" title="Set the date and time at which the file was accessed last time.">File.setAccessTime</a></li>
+<li><a href="classes/File.html#getCreationTime" title="Returns the date and time at which the file was created.">File.getCreationTime</a></li>
+<li><a href="classes/File.html#getModifyTime" title="Returns the time at which the file was modified last time.">File.getModifyTime</a></li>
+<li><a href="classes/File.html#setModifyTime" title="Set the date and time at which the file was modified last time.">File.setModifyTime</a></li>
+<li><a href="classes/File.html#touch" title="Set the date and time at which the file was modified and / or accessed
+last time.">File.touch</a></li>
+<li><a href="classes/File.html#getSize" title="Returns the size of the file.">File.getSize</a></li>
+<li><a href="classes/File.html#getOwner" title="Return the owner of the file.">File.getOwner</a></li>
+<li><a href="classes/File.html#setOwner" title="Set the owner of the file.">File.setOwner</a></li>
+<li><a href="classes/File.html#getGroup" title="Return the group of the file.">File.getGroup</a></li>
+<li><a href="classes/File.html#setGroup" title="Set the group of the file.">File.setGroup</a></li>
+<li><a href="classes/File.html#getMode" title="Return the permission mode of the file.">File.getMode</a></li>
+<li><a href="classes/File.html#setMode" title="Set the permission mode of the file.">File.setMode</a></li>
+<li><a href="classes/File.html#isReadable" title="Check if file is readable.">File.isReadable</a></li>
+<li><a href="classes/File.html#isWritable" title="Check if file is writable.">File.isWritable</a></li>
+<li><a href="classes/File.html#isExecutable" title="Check if file is executable.">File.isExecutable</a></li>
+<li><a href="classes/File.html#exists" title="Check if file exists.">File.exists</a></li>
+<li><a href="classes/File.html#delete" title="Delete a file or directory.">File.delete</a></li>
+<li><a href="classes/File.html#copyTo" title="Copy this file to another destination.">File.copyTo</a></li>
+<li><a href="classes/File.html#moveTo" title="Move this file to another destination.">File.moveTo</a></li>
+<li><a href="classes/File.html#createDirectory" title="Create a new directory.">File.createDirectory</a></li>
+<li><a href="classes/File.html#createFile" title="Create an empty file.">File.createFile</a></li>
+<li><a href="classes/File.html#getContents" title="Get contents of the file.">File.getContents</a></li>
+<li><a href="classes/File.html#setContents" title="Set contents of the file.">File.setContents</a></li>
+<li><a href="classes/File.html#appendContents" title="Append contents to the file.">File.appendContents</a></li>
+<li><a href="classes/File.html#truncate" title="Truncate file to a given size.">File.truncate</a></li>
+<li><a href="classes/File.html#getStream" title="Get a stream object to the file.">File.getStream</a></li>
+<li><a href="classes/File.html#getStreamURL" title="Get a streaming url to the file.">File.getStreamURL</a></li>
+<li><a href="classes/File.html#ls" title="List all children of this directory.">File.ls</a></li>
+<li><a href="classes/File.html#count" title="Count all children of this directory.">File.count</a></li>
+<li><a href="classes/File.html#getIterator" title="Get an iterator for this directory.">File.getIterator</a></li>
+<li><a href="classes/File.html#hasPlugin" title="Return a plugin for the filesystem.">File.hasPlugin</a></li>
+<li><a href="classes/File.html#getPlugin" title="Return a plugin for the filesystem.">File.getPlugin</a></li>
+</ul></div>
+</div>
+<div class="span5">
+<div class="well"><ul class="nav nav-list">
+<li class="nav-header">Charts</li>
+<li><a href="graph_class.html"><i class="icon-list-alt"></i> Class inheritance diagram
+                            </a></li>
+</ul></div>
+<div class="well"><ul class="nav nav-list">
+<li class="nav-header">Reports</li>
+<li><a href="errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul></div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.1.0
+</a> and<br>
+            generated on 2014-08-13T17:02:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>

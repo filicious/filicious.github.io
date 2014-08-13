@@ -1,0 +1,534 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>filicious/core » \Filicious\Stream\StreamWrapper</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">filicious/core</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Filicious.html"><i class="icon-th"></i> Filicious</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_dir_closedir" title="dir_closedir() :: Close directory handle."><span class="description">Close directory handle.</span><pre>dir_closedir()</pre></a></li>
+<li class="method public "><a href="#method_dir_opendir" title="dir_opendir() :: Open directory handle"><span class="description">Open directory handle</span><pre>dir_opendir()</pre></a></li>
+<li class="method public "><a href="#method_dir_readdir" title="dir_readdir() :: Read entry from directory handle."><span class="description">Read entry from directory handle.</span><pre>dir_readdir()</pre></a></li>
+<li class="method public "><a href="#method_dir_rewinddir" title="dir_rewinddir() :: Rewind directory handle."><span class="description">Rewind directory handle.</span><pre>dir_rewinddir()</pre></a></li>
+<li class="method public "><a href="#method_mkdir" title="mkdir() :: Create a directory"><span class="description">Create a directory</span><pre>mkdir()</pre></a></li>
+<li class="method public "><a href="#method_rename" title="rename() :: Renames a file or directory"><span class="description">Renames a file or directory</span><pre>rename()</pre></a></li>
+<li class="method public "><a href="#method_rmdir" title="rmdir() :: Removes a directory"><span class="description">Removes a directory</span><pre>rmdir()</pre></a></li>
+<li class="method public "><a href="#method_stream_cast" title="stream_cast() :: Retrieve the underlaying resource"><span class="description">Retrieve the underlaying resource</span><pre>stream_cast()</pre></a></li>
+<li class="method public "><a href="#method_stream_close" title="stream_close() :: Close an resource"><span class="description">Close an resource</span><pre>stream_close()</pre></a></li>
+<li class="method public "><a href="#method_stream_eof" title="stream_eof() :: Tests for end-of-file on a file pointer"><span class="description">Tests for end-of-file on a file pointer</span><pre>stream_eof()</pre></a></li>
+<li class="method public "><a href="#method_stream_flush" title="stream_flush() :: Flushes the output"><span class="description">Flushes the output</span><pre>stream_flush()</pre></a></li>
+<li class="method public "><a href="#method_stream_lock" title="stream_lock() :: Advisory file locking"><span class="description">Advisory file locking</span><pre>stream_lock()</pre></a></li>
+<li class="method public "><a href="#method_stream_metadata" title="stream_metadata() :: Change stream options"><span class="description">Change stream options</span><pre>stream_metadata()</pre></a></li>
+<li class="method public "><a href="#method_stream_open" title="stream_open() :: Opens file or URL"><span class="description">Opens file or URL</span><pre>stream_open()</pre></a></li>
+<li class="method public "><a href="#method_stream_read" title="stream_read() :: Read from stream"><span class="description">Read from stream</span><pre>stream_read()</pre></a></li>
+<li class="method public "><a href="#method_stream_seek" title="stream_seek() :: Seeks to specific location in a stream"><span class="description">Seeks to specific location in a stream</span><pre>stream_seek()</pre></a></li>
+<li class="method public "><a href="#method_stream_stat" title="stream_stat() :: Retrieve information about a file resource"><span class="description">Retrieve information about a file resource</span><pre>stream_stat()</pre></a></li>
+<li class="method public "><a href="#method_stream_tell" title="stream_tell() :: Retrieve the current position of a stream"><span class="description">Retrieve the current position of a stream</span><pre>stream_tell()</pre></a></li>
+<li class="method public "><a href="#method_stream_truncate" title="stream_truncate() :: Truncate stream"><span class="description">Truncate stream</span><pre>stream_truncate()</pre></a></li>
+<li class="method public "><a href="#method_stream_write" title="stream_write() :: Write to stream"><span class="description">Write to stream</span><pre>stream_write()</pre></a></li>
+<li class="method public "><a href="#method_unlink" title="unlink() :: Delete a file"><span class="description">Delete a file</span><pre>unlink()</pre></a></li>
+<li class="method public "><a href="#method_url_stat" title="url_stat() :: Retrieve information about a file"><span class="description">Retrieve information about a file</span><pre>url_stat()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_openFile" title="openFile() :: Search for the filesystem and open a file from stream url."><span class="description">Search for the filesystem and open a file from stream url.</span><pre>openFile()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_context" title="$context() :: "><span class="description"></span><pre>$context</pre></a></li></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_directoryIterator" title="$directoryIterator() :: "><span class="description"></span><pre>$directoryIterator</pre></a></li>
+<li class="property protected "><a href="#property_file" title="$file() :: "><span class="description"></span><pre>$file</pre></a></li>
+<li class="property protected "><a href="#property_fs" title="$fs() :: "><span class="description"></span><pre>$fs</pre></a></li>
+<li class="property protected "><a href="#property_stream" title="$stream() :: "><span class="description"></span><pre>$stream</pre></a></li>
+<li class="property protected "><a href="#property_url" title="$url() :: "><span class="description"></span><pre>$url</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Filicious\Stream\StreamWrapper"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Filicious.html">Filicious</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Filicious.Stream.html">Stream</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Filicious.Stream.StreamWrapper.html">StreamWrapper</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Universal stream wrapper implementation.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/filicious-core.html">filicious-core</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:c.schiffler@cyberspectrum.de">Christian Schiffler</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:tristan.lins@bit3.de">Tristan Lins</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:oliver@hofff.com">Oliver Hoff</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_dir_closedir"></a><div class="element clickable method public method_dir_closedir" data-toggle="collapse" data-target=".method_dir_closedir .collapse">
+<h2>Close directory handle.</h2>
+<pre>dir_closedir() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_dir_opendir"></a><div class="element clickable method public method_dir_opendir" data-toggle="collapse" data-target=".method_dir_opendir .collapse">
+<h2>Open directory handle</h2>
+<pre>dir_opendir(string $path, int $options) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_dir_readdir"></a><div class="element clickable method public method_dir_readdir" data-toggle="collapse" data-target=".method_dir_readdir .collapse">
+<h2>Read entry from directory handle.</h2>
+<pre>dir_readdir() : string | boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>boolean</code>
+</div>
+</div></div>
+</div>
+<a id="method_dir_rewinddir"></a><div class="element clickable method public method_dir_rewinddir" data-toggle="collapse" data-target=".method_dir_rewinddir .collapse">
+<h2>Rewind directory handle.</h2>
+<pre>dir_rewinddir() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_mkdir"></a><div class="element clickable method public method_mkdir" data-toggle="collapse" data-target=".method_mkdir .collapse">
+<h2>Create a directory</h2>
+<pre>mkdir(string $path, int $mode, int $options) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_rename"></a><div class="element clickable method public method_rename" data-toggle="collapse" data-target=".method_rename .collapse">
+<h2>Renames a file or directory</h2>
+<pre>rename(string $path_from, string $path_to) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path_from</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$path_to</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_rmdir"></a><div class="element clickable method public method_rmdir" data-toggle="collapse" data-target=".method_rmdir .collapse">
+<h2>Removes a directory</h2>
+<pre>rmdir(string $path, int $options) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_stream_cast"></a><div class="element clickable method public method_stream_cast" data-toggle="collapse" data-target=".method_stream_cast .collapse">
+<h2>Retrieve the underlaying resource</h2>
+<pre>stream_cast(int $cast_as) : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cast_as</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>resource</code></div>
+</div></div>
+</div>
+<a id="method_stream_close"></a><div class="element clickable method public method_stream_close" data-toggle="collapse" data-target=".method_stream_close .collapse">
+<h2>Close an resource</h2>
+<pre>stream_close() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_stream_eof"></a><div class="element clickable method public method_stream_eof" data-toggle="collapse" data-target=".method_stream_eof .collapse">
+<h2>Tests for end-of-file on a file pointer</h2>
+<pre>stream_eof() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_stream_flush"></a><div class="element clickable method public method_stream_flush" data-toggle="collapse" data-target=".method_stream_flush .collapse">
+<h2>Flushes the output</h2>
+<pre>stream_flush() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_stream_lock"></a><div class="element clickable method public method_stream_lock" data-toggle="collapse" data-target=".method_stream_lock .collapse">
+<h2>Advisory file locking</h2>
+<pre>stream_lock(\Filicious\Stream\mode $operation) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$operation</h4>
+<code><a href="mode.html">\Filicious\Stream\mode</a></code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_stream_metadata"></a><div class="element clickable method public method_stream_metadata" data-toggle="collapse" data-target=".method_stream_metadata .collapse">
+<h2>Change stream options</h2>
+<pre>stream_metadata(string $path, int $option, int $var) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$option</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$var</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_stream_open"></a><div class="element clickable method public method_stream_open" data-toggle="collapse" data-target=".method_stream_open .collapse">
+<h2>Opens file or URL</h2>
+<pre>stream_open(string $path, string $mode, int $options, string $opened_path) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$opened_path</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_stream_read"></a><div class="element clickable method public method_stream_read" data-toggle="collapse" data-target=".method_stream_read .collapse">
+<h2>Read from stream</h2>
+<pre>stream_read(int $count) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$count</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_stream_seek"></a><div class="element clickable method public method_stream_seek" data-toggle="collapse" data-target=".method_stream_seek .collapse">
+<h2>Seeks to specific location in a stream</h2>
+<pre>stream_seek(int $offset, int $whence) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$whence</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_stream_stat"></a><div class="element clickable method public method_stream_stat" data-toggle="collapse" data-target=".method_stream_stat .collapse">
+<h2>Retrieve information about a file resource</h2>
+<pre>stream_stat() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_stream_tell"></a><div class="element clickable method public method_stream_tell" data-toggle="collapse" data-target=".method_stream_tell .collapse">
+<h2>Retrieve the current position of a stream</h2>
+<pre>stream_tell() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_stream_truncate"></a><div class="element clickable method public method_stream_truncate" data-toggle="collapse" data-target=".method_stream_truncate .collapse">
+<h2>Truncate stream</h2>
+<pre>stream_truncate(int $new_size) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_size</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_stream_write"></a><div class="element clickable method public method_stream_write" data-toggle="collapse" data-target=".method_stream_write .collapse">
+<h2>Write to stream</h2>
+<pre>stream_write(string $data) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_unlink"></a><div class="element clickable method public method_unlink" data-toggle="collapse" data-target=".method_unlink .collapse">
+<h2>Delete a file</h2>
+<pre>unlink(string $path) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_url_stat"></a><div class="element clickable method public method_url_stat" data-toggle="collapse" data-target=".method_url_stat .collapse">
+<h2>Retrieve information about a file</h2>
+<pre>url_stat(string $url, int $flags) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_openFile"></a><div class="element clickable method protected method_openFile" data-toggle="collapse" data-target=".method_openFile .collapse">
+<h2>Search for the filesystem and open a file from stream url.</h2>
+<pre>openFile(string $url) : <a href="../classes/Filicious.File.html">\Filicious\File</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Filicious.File.html">\Filicious\File</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_context"> </a><div class="element clickable property public property_context" data-toggle="collapse" data-target=".property_context .collapse">
+<h2>$context</h2>
+<pre>$context : null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_directoryIterator"> </a><div class="element clickable property protected property_directoryIterator" data-toggle="collapse" data-target=".property_directoryIterator .collapse">
+<h2>$directoryIterator</h2>
+<pre>$directoryIterator : <a href="../classes/Filicious.Iterator.FilesystemIterator.html">\Filicious\Iterator\FilesystemIterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_file"> </a><div class="element clickable property protected property_file" data-toggle="collapse" data-target=".property_file .collapse">
+<h2>$file</h2>
+<pre>$file : <a href="../classes/Filicious.File.html">\Filicious\File</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_fs"> </a><div class="element clickable property protected property_fs" data-toggle="collapse" data-target=".property_fs .collapse">
+<h2>$fs</h2>
+<pre>$fs : <a href="../classes/Filicious.Filesystem.html">\Filicious\Filesystem</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_stream"> </a><div class="element clickable property protected property_stream" data-toggle="collapse" data-target=".property_stream .collapse">
+<h2>$stream</h2>
+<pre>$stream : <a href="../classes/Filicious.Stream.html">\Filicious\Stream</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_url"> </a><div class="element clickable property protected property_url" data-toggle="collapse" data-target=".property_url .collapse">
+<h2>$url</h2>
+<pre>$url : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.1.0
+</a> and<br>
+            generated on 2014-08-13T17:02:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>

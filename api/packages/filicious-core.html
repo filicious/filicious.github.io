@@ -1,0 +1,692 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>filicious/core » filicious-core</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">filicious/core</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Filicious.html"><i class="icon-th"></i> Filicious</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/filicious-core.html" title="filicious-core"><i class="icon-folder-open"></i>filicious-core</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#Stream" title="A file stream object.">Stream</a></li>
+<li><a href="#Adapter" title="The adapter provide direct access to the native filesystem.">Adapter</a></li>
+<li><a href="#DiskSpaceAwareAdapterInterface" title="">DiskSpaceAwareAdapterInterface</a></li>
+<li><a href="#FilePluginInterface" title="A file plugin provide additional functionality for a file.">FilePluginInterface</a></li>
+<li><a href="#MimeAwareAdapterInterface" title="Local filesystem adapter.">MimeAwareAdapterInterface</a></li>
+<li><a href="#LinkAwareAdapterInterface" title="">LinkAwareAdapterInterface</a></li>
+<li><a href="#PluginInterface" title="A plugin provide additional functionality for a filesystem or file.">PluginInterface</a></li>
+<li><a href="#HashAwareAdapterInterface" title="">HashAwareAdapterInterface</a></li>
+<li><a href="#FilesystemPluginInterface" title="A filesystem plugin provide additional functionality for a filesystem.">FilesystemPluginInterface</a></li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#StreamManager" title="Stream wrapper manager and organizer.">StreamManager</a></li>
+<li><a href="#StreamObserver" title="A file stream object.">StreamObserver</a></li>
+<li><a href="#BuildInStream" title="A file stream object.">BuildInStream</a></li>
+<li><a href="#StreamWrapper" title="Universal stream wrapper implementation.">StreamWrapper</a></li>
+<li><a href="#StreamMode" title="Streaming access mode.">StreamMode</a></li>
+<li><a href="#ObservableStream" title="An observable file stream object.">ObservableStream</a></li>
+<li><a href="#File" title="A generic file object.">File</a></li>
+<li><a href="#FilesystemIterator" title="Filesystem iterator">FilesystemIterator</a></li>
+<li><a href="#RecursiveFilesystemIterator" title="Recursive filesystem iterator">RecursiveFilesystemIterator</a></li>
+<li><a href="#Filesystem" title="Virtual filesystem structure.">Filesystem</a></li>
+<li><a href="#LocalAdapter" title="Local filesystem adapter.">LocalAdapter</a></li>
+<li><a href="#TouchEvent" title="">TouchEvent</a></li>
+<li><a href="#FilesystemEvent" title="">FilesystemEvent</a></li>
+<li><a href="#SourceDestinationFileEvent" title="">SourceDestinationFileEvent</a></li>
+<li><a href="#SetGroupEvent" title="">SetGroupEvent</a></li>
+<li><a href="#WriteEvent" title="">WriteEvent</a></li>
+<li><a href="#DeleteEvent" title="">DeleteEvent</a></li>
+<li><a href="#FiliciousEvents" title="">FiliciousEvents</a></li>
+<li><a href="#AppendEvent" title="">AppendEvent</a></li>
+<li><a href="#FileEvent" title="">FileEvent</a></li>
+<li><a href="#CreateFileEvent" title="">CreateFileEvent</a></li>
+<li><a href="#SetOwnerEvent" title="">SetOwnerEvent</a></li>
+<li><a href="#CreateDirectoryEvent" title="">CreateDirectoryEvent</a></li>
+<li><a href="#MoveEvent" title="">MoveEvent</a></li>
+<li><a href="#CopyEvent" title="">CopyEvent</a></li>
+<li><a href="#TruncateEvent" title="">TruncateEvent</a></li>
+<li><a href="#SetModeEvent" title="">SetModeEvent</a></li>
+<li><a href="#UnsupportedPluginException" title="Unsupported plugin exception">UnsupportedPluginException</a></li>
+<li><a href="#NotADirectoryException" title="Filesystem exception">NotADirectoryException</a></li>
+<li><a href="#StreamWrapperNotRegisteredException" title="Stream wrapper already registered exception.">StreamWrapperNotRegisteredException</a></li>
+<li><a href="#InvalidArgumentException" title="Invalid argument exception.">InvalidArgumentException</a></li>
+<li><a href="#StreamWrapperAlreadyRegisteredException" title="Stream wrapper already registered exception.">StreamWrapperAlreadyRegisteredException</a></li>
+<li><a href="#PluginException" title="Plugin exception">PluginException</a></li>
+<li><a href="#DirectoryOverwriteDirectoryException" title="Filesystem exception">DirectoryOverwriteDirectoryException</a></li>
+<li><a href="#FileOperationException" title="Filesystem exception">FileOperationException</a></li>
+<li><a href="#DirectoryOverwriteFileException" title="Filesystem exception">DirectoryOverwriteFileException</a></li>
+<li><a href="#AdapterException" title="Filesystem exception">AdapterException</a></li>
+<li><a href="#FileNotFoundException" title="Filesystem exception">FileNotFoundException</a></li>
+<li><a href="#StreamException" title="Generic stream exception.">StreamException</a></li>
+<li><a href="#MissingStreamWrapperException" title="Missing stream wrapper exception.">MissingStreamWrapperException</a></li>
+<li><a href="#ConfigurationException" title="Filesystem exception">ConfigurationException</a></li>
+<li><a href="#FileOverwriteFileException" title="Filesystem exception">FileOverwriteFileException</a></li>
+<li><a href="#NotAFileException" title="Filesystem exception">NotAFileException</a></li>
+<li><a href="#FilesystemException" title="Filesystem exception">FilesystemException</a></li>
+<li><a href="#FileOverwriteDirectoryException" title="Filesystem exception">FileOverwriteDirectoryException</a></li>
+<li><a href="#StreamNotSupportedException" title="Stream wrapper already registered exception.">StreamNotSupportedException</a></li>
+<li><a href="#Util" title="Utility class">Util</a></li>
+<li><a href="#MountAdapter" title="A mount aggregator can mount adapters to various paths.">MountAdapter</a></li>
+<li><a href="#RecursivePathnameIterator" title="Filesystem iterator">RecursivePathnameIterator</a></li>
+<li><a href="#PathnameIterator" title="Filesystem iterator">PathnameIterator</a></li>
+<li><a href="#AbstractDelegatorAdapter" title="Local filesystem adapter.">AbstractDelegatorAdapter</a></li>
+<li><a href="#Pathname" title="An object that hold the absolute and the adapter local pathname.">Pathname</a></li>
+<li><a href="#AbstractAdapter" title="A mount aggregator can mount adapters to various paths.">AbstractAdapter</a></li>
+<li><a href="#Validator" title="">Validator</a></li>
+<li><a href="#RootAdapter" title="Local filesystem adapter.">RootAdapter</a></li>
+<li><a href="#DiskSpacePlugin" title="">DiskSpacePlugin</a></li>
+<li><a href="#DiskSpaceFilePlugin" title="">DiskSpaceFilePlugin</a></li>
+<li><a href="#AbstractPlugin" title="">AbstractPlugin</a></li>
+<li><a href="#AbstractFilePlugin" title="">AbstractFilePlugin</a></li>
+<li><a href="#MimeFilePlugin" title="">MimeFilePlugin</a></li>
+<li><a href="#MimePlugin" title="">MimePlugin</a></li>
+<li><a href="#LinkPlugin" title="">LinkPlugin</a></li>
+<li><a href="#LinkFilePlugin" title="">LinkFilePlugin</a></li>
+<li><a href="#AbstractFilesystemPlugin" title="">AbstractFilesystemPlugin</a></li>
+<li><a href="#HashFilePlugin" title="">HashFilePlugin</a></li>
+<li><a href="#HashPlugin" title="">HashPlugin</a></li>
+<li><a href="#PluginManager" title="">PluginManager</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb"><li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span><li class="active"><a href="../packages/filicious-core.html">filicious-core</a></li>
+</li></ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Adapter" class="element ajax clickable interface">
+<h1>Adapter<a href="../classes/Filicious.Internals.Adapter.html">¶</a>
+</h1>
+<p class="short_description">The adapter provide direct access to the native filesystem.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.Adapter.html" class="more">« More »</a>
+</div>
+<div id="DiskSpaceAwareAdapterInterface" class="element ajax clickable interface">
+<h1>DiskSpaceAwareAdapterInterface<a href="../classes/Filicious.Plugin.DiskSpace.DiskSpaceAwareAdapterInterface.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.DiskSpace.DiskSpaceAwareAdapterInterface.html" class="more">« More »</a>
+</div>
+<div id="FilePluginInterface" class="element ajax clickable interface">
+<h1>FilePluginInterface<a href="../classes/Filicious.Plugin.FilePluginInterface.html">¶</a>
+</h1>
+<p class="short_description">A file plugin provide additional functionality for a file.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.FilePluginInterface.html" class="more">« More »</a>
+</div>
+<div id="FilesystemPluginInterface" class="element ajax clickable interface">
+<h1>FilesystemPluginInterface<a href="../classes/Filicious.Plugin.FilesystemPluginInterface.html">¶</a>
+</h1>
+<p class="short_description">A filesystem plugin provide additional functionality for a filesystem.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.FilesystemPluginInterface.html" class="more">« More »</a>
+</div>
+<div id="HashAwareAdapterInterface" class="element ajax clickable interface">
+<h1>HashAwareAdapterInterface<a href="../classes/Filicious.Plugin.Hash.HashAwareAdapterInterface.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Hash.HashAwareAdapterInterface.html" class="more">« More »</a>
+</div>
+<div id="LinkAwareAdapterInterface" class="element ajax clickable interface">
+<h1>LinkAwareAdapterInterface<a href="../classes/Filicious.Plugin.Link.LinkAwareAdapterInterface.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Link.LinkAwareAdapterInterface.html" class="more">« More »</a>
+</div>
+<div id="MimeAwareAdapterInterface" class="element ajax clickable interface">
+<h1>MimeAwareAdapterInterface<a href="../classes/Filicious.Plugin.Mime.MimeAwareAdapterInterface.html">¶</a>
+</h1>
+<p class="short_description">Local filesystem adapter.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Mime.MimeAwareAdapterInterface.html" class="more">« More »</a>
+</div>
+<div id="PluginInterface" class="element ajax clickable interface">
+<h1>PluginInterface<a href="../classes/Filicious.Plugin.PluginInterface.html">¶</a>
+</h1>
+<p class="short_description">A plugin provide additional functionality for a filesystem or file.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.PluginInterface.html" class="more">« More »</a>
+</div>
+<div id="Stream" class="element ajax clickable interface">
+<h1>Stream<a href="../classes/Filicious.Stream.html">¶</a>
+</h1>
+<p class="short_description">A file stream object.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Stream.html" class="more">« More »</a>
+</div>
+<div id="AppendEvent" class="element ajax clickable class">
+<h1>AppendEvent<a href="../classes/Filicious.Event.AppendEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.AppendEvent.html" class="more">« More »</a>
+</div>
+<div id="CopyEvent" class="element ajax clickable class">
+<h1>CopyEvent<a href="../classes/Filicious.Event.CopyEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.CopyEvent.html" class="more">« More »</a>
+</div>
+<div id="CreateDirectoryEvent" class="element ajax clickable class">
+<h1>CreateDirectoryEvent<a href="../classes/Filicious.Event.CreateDirectoryEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.CreateDirectoryEvent.html" class="more">« More »</a>
+</div>
+<div id="CreateFileEvent" class="element ajax clickable class">
+<h1>CreateFileEvent<a href="../classes/Filicious.Event.CreateFileEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.CreateFileEvent.html" class="more">« More »</a>
+</div>
+<div id="DeleteEvent" class="element ajax clickable class">
+<h1>DeleteEvent<a href="../classes/Filicious.Event.DeleteEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.DeleteEvent.html" class="more">« More »</a>
+</div>
+<div id="FileEvent" class="element ajax clickable class">
+<h1>FileEvent<a href="../classes/Filicious.Event.FileEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.FileEvent.html" class="more">« More »</a>
+</div>
+<div id="FilesystemEvent" class="element ajax clickable class">
+<h1>FilesystemEvent<a href="../classes/Filicious.Event.FilesystemEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.FilesystemEvent.html" class="more">« More »</a>
+</div>
+<div id="FiliciousEvents" class="element ajax clickable class">
+<h1>FiliciousEvents<a href="../classes/Filicious.Event.FiliciousEvents.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.FiliciousEvents.html" class="more">« More »</a>
+</div>
+<div id="MoveEvent" class="element ajax clickable class">
+<h1>MoveEvent<a href="../classes/Filicious.Event.MoveEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.MoveEvent.html" class="more">« More »</a>
+</div>
+<div id="SetGroupEvent" class="element ajax clickable class">
+<h1>SetGroupEvent<a href="../classes/Filicious.Event.SetGroupEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.SetGroupEvent.html" class="more">« More »</a>
+</div>
+<div id="SetModeEvent" class="element ajax clickable class">
+<h1>SetModeEvent<a href="../classes/Filicious.Event.SetModeEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.SetModeEvent.html" class="more">« More »</a>
+</div>
+<div id="SetOwnerEvent" class="element ajax clickable class">
+<h1>SetOwnerEvent<a href="../classes/Filicious.Event.SetOwnerEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.SetOwnerEvent.html" class="more">« More »</a>
+</div>
+<div id="SourceDestinationFileEvent" class="element ajax clickable class">
+<h1>SourceDestinationFileEvent<a href="../classes/Filicious.Event.SourceDestinationFileEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.SourceDestinationFileEvent.html" class="more">« More »</a>
+</div>
+<div id="TouchEvent" class="element ajax clickable class">
+<h1>TouchEvent<a href="../classes/Filicious.Event.TouchEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.TouchEvent.html" class="more">« More »</a>
+</div>
+<div id="TruncateEvent" class="element ajax clickable class">
+<h1>TruncateEvent<a href="../classes/Filicious.Event.TruncateEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.TruncateEvent.html" class="more">« More »</a>
+</div>
+<div id="WriteEvent" class="element ajax clickable class">
+<h1>WriteEvent<a href="../classes/Filicious.Event.WriteEvent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Event.WriteEvent.html" class="more">« More »</a>
+</div>
+<div id="AdapterException" class="element ajax clickable class">
+<h1>AdapterException<a href="../classes/Filicious.Exception.AdapterException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.AdapterException.html" class="more">« More »</a>
+</div>
+<div id="ConfigurationException" class="element ajax clickable class">
+<h1>ConfigurationException<a href="../classes/Filicious.Exception.ConfigurationException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.ConfigurationException.html" class="more">« More »</a>
+</div>
+<div id="DirectoryOverwriteDirectoryException" class="element ajax clickable class">
+<h1>DirectoryOverwriteDirectoryException<a href="../classes/Filicious.Exception.DirectoryOverwriteDirectoryException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.DirectoryOverwriteDirectoryException.html" class="more">« More »</a>
+</div>
+<div id="DirectoryOverwriteFileException" class="element ajax clickable class">
+<h1>DirectoryOverwriteFileException<a href="../classes/Filicious.Exception.DirectoryOverwriteFileException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.DirectoryOverwriteFileException.html" class="more">« More »</a>
+</div>
+<div id="FileNotFoundException" class="element ajax clickable class">
+<h1>FileNotFoundException<a href="../classes/Filicious.Exception.FileNotFoundException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.FileNotFoundException.html" class="more">« More »</a>
+</div>
+<div id="FileOperationException" class="element ajax clickable class">
+<h1>FileOperationException<a href="../classes/Filicious.Exception.FileOperationException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.FileOperationException.html" class="more">« More »</a>
+</div>
+<div id="FileOverwriteDirectoryException" class="element ajax clickable class">
+<h1>FileOverwriteDirectoryException<a href="../classes/Filicious.Exception.FileOverwriteDirectoryException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.FileOverwriteDirectoryException.html" class="more">« More »</a>
+</div>
+<div id="FileOverwriteFileException" class="element ajax clickable class">
+<h1>FileOverwriteFileException<a href="../classes/Filicious.Exception.FileOverwriteFileException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.FileOverwriteFileException.html" class="more">« More »</a>
+</div>
+<div id="FilesystemException" class="element ajax clickable class">
+<h1>FilesystemException<a href="../classes/Filicious.Exception.FilesystemException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.FilesystemException.html" class="more">« More »</a>
+</div>
+<div id="InvalidArgumentException" class="element ajax clickable class">
+<h1>InvalidArgumentException<a href="../classes/Filicious.Exception.InvalidArgumentException.html">¶</a>
+</h1>
+<p class="short_description">Invalid argument exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.InvalidArgumentException.html" class="more">« More »</a>
+</div>
+<div id="MissingStreamWrapperException" class="element ajax clickable class">
+<h1>MissingStreamWrapperException<a href="../classes/Filicious.Exception.MissingStreamWrapperException.html">¶</a>
+</h1>
+<p class="short_description">Missing stream wrapper exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.MissingStreamWrapperException.html" class="more">« More »</a>
+</div>
+<div id="NotADirectoryException" class="element ajax clickable class">
+<h1>NotADirectoryException<a href="../classes/Filicious.Exception.NotADirectoryException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.NotADirectoryException.html" class="more">« More »</a>
+</div>
+<div id="NotAFileException" class="element ajax clickable class">
+<h1>NotAFileException<a href="../classes/Filicious.Exception.NotAFileException.html">¶</a>
+</h1>
+<p class="short_description">Filesystem exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.NotAFileException.html" class="more">« More »</a>
+</div>
+<div id="PluginException" class="element ajax clickable class">
+<h1>PluginException<a href="../classes/Filicious.Exception.PluginException.html">¶</a>
+</h1>
+<p class="short_description">Plugin exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.PluginException.html" class="more">« More »</a>
+</div>
+<div id="StreamException" class="element ajax clickable class">
+<h1>StreamException<a href="../classes/Filicious.Exception.StreamException.html">¶</a>
+</h1>
+<p class="short_description">Generic stream exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.StreamException.html" class="more">« More »</a>
+</div>
+<div id="StreamNotSupportedException" class="element ajax clickable class">
+<h1>StreamNotSupportedException<a href="../classes/Filicious.Exception.StreamNotSupportedException.html">¶</a>
+</h1>
+<p class="short_description">Stream wrapper already registered exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.StreamNotSupportedException.html" class="more">« More »</a>
+</div>
+<div id="StreamWrapperAlreadyRegisteredException" class="element ajax clickable class">
+<h1>StreamWrapperAlreadyRegisteredException<a href="../classes/Filicious.Exception.StreamWrapperAlreadyRegisteredException.html">¶</a>
+</h1>
+<p class="short_description">Stream wrapper already registered exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.StreamWrapperAlreadyRegisteredException.html" class="more">« More »</a>
+</div>
+<div id="StreamWrapperNotRegisteredException" class="element ajax clickable class">
+<h1>StreamWrapperNotRegisteredException<a href="../classes/Filicious.Exception.StreamWrapperNotRegisteredException.html">¶</a>
+</h1>
+<p class="short_description">Stream wrapper already registered exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.StreamWrapperNotRegisteredException.html" class="more">« More »</a>
+</div>
+<div id="UnsupportedPluginException" class="element ajax clickable class">
+<h1>UnsupportedPluginException<a href="../classes/Filicious.Exception.UnsupportedPluginException.html">¶</a>
+</h1>
+<p class="short_description">Unsupported plugin exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Exception.UnsupportedPluginException.html" class="more">« More »</a>
+</div>
+<div id="File" class="element ajax clickable class">
+<h1>File<a href="../classes/Filicious.File.html">¶</a>
+</h1>
+<p class="short_description">A generic file object.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.File.html" class="more">« More »</a>
+</div>
+<div id="Filesystem" class="element ajax clickable class">
+<h1>Filesystem<a href="../classes/Filicious.Filesystem.html">¶</a>
+</h1>
+<p class="short_description">Virtual filesystem structure.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Filesystem.html" class="more">« More »</a>
+</div>
+<div id="AbstractAdapter" class="element ajax clickable class">
+<h1>AbstractAdapter<a href="../classes/Filicious.Internals.AbstractAdapter.html">¶</a>
+</h1>
+<p class="short_description">A mount aggregator can mount adapters to various paths.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.AbstractAdapter.html" class="more">« More »</a>
+</div>
+<div id="AbstractDelegatorAdapter" class="element ajax clickable class">
+<h1>AbstractDelegatorAdapter<a href="../classes/Filicious.Internals.AbstractDelegatorAdapter.html">¶</a>
+</h1>
+<p class="short_description">Local filesystem adapter.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.AbstractDelegatorAdapter.html" class="more">« More »</a>
+</div>
+<div id="MountAdapter" class="element ajax clickable class">
+<h1>MountAdapter<a href="../classes/Filicious.Internals.MountAdapter.html">¶</a>
+</h1>
+<p class="short_description">A mount aggregator can mount adapters to various paths.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.MountAdapter.html" class="more">« More »</a>
+</div>
+<div id="Pathname" class="element ajax clickable class">
+<h1>Pathname<a href="../classes/Filicious.Internals.Pathname.html">¶</a>
+</h1>
+<p class="short_description">An object that hold the absolute and the adapter local pathname.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.Pathname.html" class="more">« More »</a>
+</div>
+<div id="PathnameIterator" class="element ajax clickable class">
+<h1>PathnameIterator<a href="../classes/Filicious.Internals.PathnameIterator.html">¶</a>
+</h1>
+<p class="short_description">Filesystem iterator</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.PathnameIterator.html" class="more">« More »</a>
+</div>
+<div id="RecursivePathnameIterator" class="element ajax clickable class">
+<h1>RecursivePathnameIterator<a href="../classes/Filicious.Internals.RecursivePathnameIterator.html">¶</a>
+</h1>
+<p class="short_description">Filesystem iterator</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.RecursivePathnameIterator.html" class="more">« More »</a>
+</div>
+<div id="RootAdapter" class="element ajax clickable class">
+<h1>RootAdapter<a href="../classes/Filicious.Internals.RootAdapter.html">¶</a>
+</h1>
+<p class="short_description">Local filesystem adapter.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.RootAdapter.html" class="more">« More »</a>
+</div>
+<div id="Util" class="element ajax clickable class">
+<h1>Util<a href="../classes/Filicious.Internals.Util.html">¶</a>
+</h1>
+<p class="short_description">Utility class</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.Util.html" class="more">« More »</a>
+</div>
+<div id="Validator" class="element ajax clickable class">
+<h1>Validator<a href="../classes/Filicious.Internals.Validator.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Internals.Validator.html" class="more">« More »</a>
+</div>
+<div id="FilesystemIterator" class="element ajax clickable class">
+<h1>FilesystemIterator<a href="../classes/Filicious.Iterator.FilesystemIterator.html">¶</a>
+</h1>
+<p class="short_description">Filesystem iterator</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Iterator.FilesystemIterator.html" class="more">« More »</a>
+</div>
+<div id="RecursiveFilesystemIterator" class="element ajax clickable class">
+<h1>RecursiveFilesystemIterator<a href="../classes/Filicious.Iterator.RecursiveFilesystemIterator.html">¶</a>
+</h1>
+<p class="short_description">Recursive filesystem iterator</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Iterator.RecursiveFilesystemIterator.html" class="more">« More »</a>
+</div>
+<div id="LocalAdapter" class="element ajax clickable class">
+<h1>LocalAdapter<a href="../classes/Filicious.Local.LocalAdapter.html">¶</a>
+</h1>
+<p class="short_description">Local filesystem adapter.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Local.LocalAdapter.html" class="more">« More »</a>
+</div>
+<div id="AbstractFilePlugin" class="element ajax clickable class">
+<h1>AbstractFilePlugin<a href="../classes/Filicious.Plugin.AbstractFilePlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.AbstractFilePlugin.html" class="more">« More »</a>
+</div>
+<div id="AbstractFilesystemPlugin" class="element ajax clickable class">
+<h1>AbstractFilesystemPlugin<a href="../classes/Filicious.Plugin.AbstractFilesystemPlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.AbstractFilesystemPlugin.html" class="more">« More »</a>
+</div>
+<div id="AbstractPlugin" class="element ajax clickable class">
+<h1>AbstractPlugin<a href="../classes/Filicious.Plugin.AbstractPlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.AbstractPlugin.html" class="more">« More »</a>
+</div>
+<div id="DiskSpaceFilePlugin" class="element ajax clickable class">
+<h1>DiskSpaceFilePlugin<a href="../classes/Filicious.Plugin.DiskSpace.DiskSpaceFilePlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.DiskSpace.DiskSpaceFilePlugin.html" class="more">« More »</a>
+</div>
+<div id="DiskSpacePlugin" class="element ajax clickable class">
+<h1>DiskSpacePlugin<a href="../classes/Filicious.Plugin.DiskSpace.DiskSpacePlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.DiskSpace.DiskSpacePlugin.html" class="more">« More »</a>
+</div>
+<div id="HashFilePlugin" class="element ajax clickable class">
+<h1>HashFilePlugin<a href="../classes/Filicious.Plugin.Hash.HashFilePlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Hash.HashFilePlugin.html" class="more">« More »</a>
+</div>
+<div id="HashPlugin" class="element ajax clickable class">
+<h1>HashPlugin<a href="../classes/Filicious.Plugin.Hash.HashPlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Hash.HashPlugin.html" class="more">« More »</a>
+</div>
+<div id="MimePlugin" class="element ajax clickable class">
+<h1>MimePlugin<a href="../classes/Filicious.Plugin.Hash.MimePlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Hash.MimePlugin.html" class="more">« More »</a>
+</div>
+<div id="LinkFilePlugin" class="element ajax clickable class">
+<h1>LinkFilePlugin<a href="../classes/Filicious.Plugin.Link.LinkFilePlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Link.LinkFilePlugin.html" class="more">« More »</a>
+</div>
+<div id="LinkPlugin" class="element ajax clickable class">
+<h1>LinkPlugin<a href="../classes/Filicious.Plugin.Link.LinkPlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Link.LinkPlugin.html" class="more">« More »</a>
+</div>
+<div id="MimeFilePlugin" class="element ajax clickable class">
+<h1>MimeFilePlugin<a href="../classes/Filicious.Plugin.Mime.MimeFilePlugin.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.Mime.MimeFilePlugin.html" class="more">« More »</a>
+</div>
+<div id="PluginManager" class="element ajax clickable class">
+<h1>PluginManager<a href="../classes/Filicious.Plugin.PluginManager.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Plugin.PluginManager.html" class="more">« More »</a>
+</div>
+<div id="BuildInStream" class="element ajax clickable class">
+<h1>BuildInStream<a href="../classes/Filicious.Stream.BuildInStream.html">¶</a>
+</h1>
+<p class="short_description">A file stream object.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Stream.BuildInStream.html" class="more">« More »</a>
+</div>
+<div id="ObservableStream" class="element ajax clickable class">
+<h1>ObservableStream<a href="../classes/Filicious.Stream.ObservableStream.html">¶</a>
+</h1>
+<p class="short_description">An observable file stream object.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Stream.ObservableStream.html" class="more">« More »</a>
+</div>
+<div id="StreamManager" class="element ajax clickable class">
+<h1>StreamManager<a href="../classes/Filicious.Stream.StreamManager.html">¶</a>
+</h1>
+<p class="short_description">Stream wrapper manager and organizer.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Stream.StreamManager.html" class="more">« More »</a>
+</div>
+<div id="StreamMode" class="element ajax clickable class">
+<h1>StreamMode<a href="../classes/Filicious.Stream.StreamMode.html">¶</a>
+</h1>
+<p class="short_description">Streaming access mode.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Stream.StreamMode.html" class="more">« More »</a>
+</div>
+<div id="StreamObserver" class="element ajax clickable class">
+<h1>StreamObserver<a href="../classes/Filicious.Stream.StreamObserver.html">¶</a>
+</h1>
+<p class="short_description">A file stream object.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Stream.StreamObserver.html" class="more">« More »</a>
+</div>
+<div id="StreamWrapper" class="element ajax clickable class">
+<h1>StreamWrapper<a href="../classes/Filicious.Stream.StreamWrapper.html">¶</a>
+</h1>
+<p class="short_description">Universal stream wrapper implementation.</p>
+<div class="details collapse"></div>
+<a href="../classes/Filicious.Stream.StreamWrapper.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.1.0
+</a> and<br>
+            generated on 2014-08-13T17:02:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>

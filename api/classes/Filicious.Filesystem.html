@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>filicious/core » \Filicious\Filesystem</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">filicious/core</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Filicious.html"><i class="icon-th"></i> Filicious</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct() :: "><span class="description">__destruct()
+        </span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method_disableStreaming" title="disableStreaming() :: Disable streaming for this filesystem."><span class="description">Disable streaming for this filesystem.</span><pre>disableStreaming()</pre></a></li>
+<li class="method public "><a href="#method_enableStreaming" title="enableStreaming() :: Enable streaming for this filesystem."><span class="description">Enable streaming for this filesystem.</span><pre>enableStreaming()</pre></a></li>
+<li class="method public "><a href="#method_getEventDispatcher" title="getEventDispatcher() :: "><span class="description">getEventDispatcher()
+        </span><pre>getEventDispatcher()</pre></a></li>
+<li class="method public "><a href="#method_getFile" title="getFile() :: Get a file object for the specific file."><span class="description">Get a file object for the specific file.</span><pre>getFile()</pre></a></li>
+<li class="method public "><a href="#method_getPlugin" title="getPlugin() :: Return a plugin for the filesystem."><span class="description">Return a plugin for the filesystem.</span><pre>getPlugin()</pre></a></li>
+<li class="method public "><a href="#method_getPluginManager" title="getPluginManager() :: "><span class="description">getPluginManager()
+        </span><pre>getPluginManager()</pre></a></li>
+<li class="method public "><a href="#method_getRoot" title="getRoot() :: Get the root (/) file node."><span class="description">Get the root (/) file node.</span><pre>getRoot()</pre></a></li>
+<li class="method public "><a href="#method_getRootAdapter" title="getRootAdapter() :: "><span class="description">getRootAdapter()
+        </span><pre>getRootAdapter()</pre></a></li>
+<li class="method public "><a href="#method_getStreamHost" title="getStreamHost() :: Return the stream host or null if streaming is disabled."><span class="description">Return the stream host or null if streaming is disabled.</span><pre>getStreamHost()</pre></a></li>
+<li class="method public "><a href="#method_getStreamPrefix" title="getStreamPrefix() :: Return the complete stream url prefix, e.g. filicious://example"><span class="description">Return the complete stream url prefix, e.g. filicious://example</span><pre>getStreamPrefix()</pre></a></li>
+<li class="method public "><a href="#method_getStreamScheme" title="getStreamScheme() :: Return the stream scheme or null if streaming is disabled."><span class="description">Return the stream scheme or null if streaming is disabled.</span><pre>getStreamScheme()</pre></a></li>
+<li class="method public "><a href="#method_hasPlugin" title="hasPlugin() :: Return a plugin for the filesystem."><span class="description">Return a plugin for the filesystem.</span><pre>hasPlugin()</pre></a></li>
+<li class="method public "><a href="#method_isStreamingEnabled" title="isStreamingEnabled() :: Determine is streaming currently enabled."><span class="description">Determine is streaming currently enabled.</span><pre>isStreamingEnabled()</pre></a></li>
+<li class="method public "><a href="#method_setEventDispatcher" title="setEventDispatcher() :: "><span class="description">setEventDispatcher()
+        </span><pre>setEventDispatcher()</pre></a></li>
+<li class="method public "><a href="#method_setPluginManager" title="setPluginManager() :: "><span class="description">setPluginManager()
+        </span><pre>setPluginManager()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_adapter" title="$adapter() :: "><span class="description"></span><pre>$adapter</pre></a></li>
+<li class="property protected "><a href="#property_eventDispatcher" title="$eventDispatcher() :: "><span class="description"></span><pre>$eventDispatcher</pre></a></li>
+<li class="property protected "><a href="#property_pluginManager" title="$pluginManager() :: "><span class="description"></span><pre>$pluginManager</pre></a></li>
+<li class="property protected "><a href="#property_streamHost" title="$streamHost() :: "><span class="description"></span><pre>$streamHost</pre></a></li>
+<li class="property protected "><a href="#property_streamScheme" title="$streamScheme() :: "><span class="description"></span><pre>$streamScheme</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Filicious\Filesystem"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Filicious.html">Filicious</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Filicious.Filesystem.html">Filesystem</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Virtual filesystem structure.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/filicious-core.html">filicious-core</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:c.schiffler@cyberspectrum.de">Christian Schiffler</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:tristan.lins@bit3.de">Tristan Lins</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:oliver@hofff.com">Oliver Hoff</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>__construct()
+        </h2>
+<pre>__construct(\Filicious\Internals\Adapter $adapter) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$adapter</h4>
+<code><a href="../classes/Filicious.Internals.Adapter.html">\Filicious\Internals\Adapter</a></code>
+</div>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>__destruct()
+        </h2>
+<pre>__destruct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_disableStreaming"></a><div class="element clickable method public method_disableStreaming" data-toggle="collapse" data-target=".method_disableStreaming .collapse">
+<h2>Disable streaming for this filesystem.</h2>
+<pre>disableStreaming() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.StreamWrapperNotRegisteredException.html">\Filicious\Exception\StreamWrapperNotRegisteredException</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_enableStreaming"></a><div class="element clickable method public method_enableStreaming" data-toggle="collapse" data-target=".method_enableStreaming .collapse">
+<h2>Enable streaming for this filesystem.</h2>
+<pre>enableStreaming(mixed $host, null $scheme) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$host</h4></div>
+<div class="subelement argument">
+<h4>$scheme</h4>
+<code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_getEventDispatcher"></a><div class="element clickable method public method_getEventDispatcher" data-toggle="collapse" data-target=".method_getEventDispatcher .collapse">
+<h2>getEventDispatcher()
+        </h2>
+<pre>getEventDispatcher() : <a href="EventDispatcherInterface.html">\Symfony\Component\EventDispatcher\EventDispatcherInterface</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="EventDispatcherInterface.html">\Symfony\Component\EventDispatcher\EventDispatcherInterface</a></code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_getFile"></a><div class="element clickable method public method_getFile" data-toggle="collapse" data-target=".method_getFile .collapse">
+<h2>Get a file object for the specific file.</h2>
+<pre>getFile(string $path) : <a href="../classes/Filicious.File.html">\Filicious\File</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Filicious.File.html">\Filicious\File</a></code></div>
+</div></div>
+</div>
+<a id="method_getPlugin"></a><div class="element clickable method public method_getPlugin" data-toggle="collapse" data-target=".method_getPlugin .collapse">
+<h2>Return a plugin for the filesystem.</h2>
+<pre>getPlugin(mixed $name) : <a href="../classes/Filicious.Plugin.FilesystemPluginInterface.html">\Filicious\Plugin\FilesystemPluginInterface</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Filicious.Plugin.FilesystemPluginInterface.html">\Filicious\Plugin\FilesystemPluginInterface</a></code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_getPluginManager"></a><div class="element clickable method public method_getPluginManager" data-toggle="collapse" data-target=".method_getPluginManager .collapse">
+<h2>getPluginManager()
+        </h2>
+<pre>getPluginManager() : <a href="../classes/Filicious.Plugin.PluginManager.html">\Filicious\Plugin\PluginManager</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Filicious.Plugin.PluginManager.html">\Filicious\Plugin\PluginManager</a></code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_getRoot"></a><div class="element clickable method public method_getRoot" data-toggle="collapse" data-target=".method_getRoot .collapse">
+<h2>Get the root (/) file node.</h2>
+<pre>getRoot() : <a href="../classes/Filicious.File.html">\Filicious\File</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Filicious.File.html">\Filicious\File</a></code></div>
+</div></div>
+</div>
+<a id="method_getRootAdapter"></a><div class="element clickable method public method_getRootAdapter" data-toggle="collapse" data-target=".method_getRootAdapter .collapse">
+<h2>getRootAdapter()
+        </h2>
+<pre>getRootAdapter() : <a href="../classes/Filicious.Internals.RootAdapter.html">\Filicious\Internals\RootAdapter</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Filicious.Internals.RootAdapter.html">\Filicious\Internals\RootAdapter</a></code></div>
+</div></div>
+</div>
+<a id="method_getStreamHost"></a><div class="element clickable method public method_getStreamHost" data-toggle="collapse" data-target=".method_getStreamHost .collapse">
+<h2>Return the stream host or null if streaming is disabled.</h2>
+<pre>getStreamHost() : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_getStreamPrefix"></a><div class="element clickable method public method_getStreamPrefix" data-toggle="collapse" data-target=".method_getStreamPrefix .collapse">
+<h2>Return the complete stream url prefix, e.g. filicious://example</h2>
+<pre>getStreamPrefix() : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_getStreamScheme"></a><div class="element clickable method public method_getStreamScheme" data-toggle="collapse" data-target=".method_getStreamScheme .collapse">
+<h2>Return the stream scheme or null if streaming is disabled.</h2>
+<pre>getStreamScheme() : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_hasPlugin"></a><div class="element clickable method public method_hasPlugin" data-toggle="collapse" data-target=".method_hasPlugin .collapse">
+<h2>Return a plugin for the filesystem.</h2>
+<pre>hasPlugin(mixed $name) : <a href="../classes/Filicious.Plugin.FilesystemPluginInterface.html">\Filicious\Plugin\FilesystemPluginInterface</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Filicious.Plugin.FilesystemPluginInterface.html">\Filicious\Plugin\FilesystemPluginInterface</a></code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_isStreamingEnabled"></a><div class="element clickable method public method_isStreamingEnabled" data-toggle="collapse" data-target=".method_isStreamingEnabled .collapse">
+<h2>Determine is streaming currently enabled.</h2>
+<pre>isStreamingEnabled() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_setEventDispatcher"></a><div class="element clickable method public method_setEventDispatcher" data-toggle="collapse" data-target=".method_setEventDispatcher .collapse">
+<h2>setEventDispatcher()
+        </h2>
+<pre>setEventDispatcher(\Symfony\Component\EventDispatcher\EventDispatcherInterface|null $eventDispatcher) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$eventDispatcher</h4>
+<code><a href="EventDispatcherInterface.html">\Symfony\Component\EventDispatcher\EventDispatcherInterface</a></code><code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setPluginManager"></a><div class="element clickable method public method_setPluginManager" data-toggle="collapse" data-target=".method_setPluginManager .collapse">
+<h2>setPluginManager()
+        </h2>
+<pre>setPluginManager(\Filicious\Plugin\PluginManager|null $pluginManager) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pluginManager</h4>
+<code><a href="../classes/Filicious.Plugin.PluginManager.html">\Filicious\Plugin\PluginManager</a></code><code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_adapter"> </a><div class="element clickable property protected property_adapter" data-toggle="collapse" data-target=".property_adapter .collapse">
+<h2>$adapter</h2>
+<pre>$adapter : <a href="../classes/Filicious.Internals.RootAdapter.html">\Filicious\Internals\RootAdapter</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_eventDispatcher"> </a><div class="element clickable property protected property_eventDispatcher" data-toggle="collapse" data-target=".property_eventDispatcher .collapse">
+<h2>$eventDispatcher</h2>
+<pre>$eventDispatcher : <a href="EventDispatcherInterface.html">\Symfony\Component\EventDispatcher\EventDispatcherInterface</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_pluginManager"> </a><div class="element clickable property protected property_pluginManager" data-toggle="collapse" data-target=".property_pluginManager .collapse">
+<h2>$pluginManager</h2>
+<pre>$pluginManager : <a href="../classes/Filicious.Plugin.PluginManager.html">\Filicious\Plugin\PluginManager</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_streamHost"> </a><div class="element clickable property protected property_streamHost" data-toggle="collapse" data-target=".property_streamHost .collapse">
+<h2>$streamHost</h2>
+<pre>$streamHost : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_streamScheme"> </a><div class="element clickable property protected property_streamScheme" data-toggle="collapse" data-target=".property_streamScheme .collapse">
+<h2>$streamScheme</h2>
+<pre>$streamScheme : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.1.0
+</a> and<br>
+            generated on 2014-08-13T17:02:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1226 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>filicious/core » \Filicious\Internals\Adapter</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">filicious/core</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Filicious.html"><i class="icon-th"></i> Filicious</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list"><li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_appendContents" title="appendContents() :: Write contents to a file. Returns &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory)."><span class="description">Write contents to a file. Returns &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</span><pre>appendContents()</pre></a></li>
+<li class="method public "><a href="#method_copyFrom" title="copyFrom() :: Copies file"><span class="description">Copies file</span><pre>copyFrom()</pre></a></li>
+<li class="method public "><a href="#method_copyTo" title="copyTo() :: Copies file"><span class="description">Copies file</span><pre>copyTo()</pre></a></li>
+<li class="method public "><a href="#method_count" title="count() :: TODO"><span class="description">TODO</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#method_createDirectory" title="createDirectory() :: Makes directory"><span class="description">Makes directory</span><pre>createDirectory()</pre></a></li>
+<li class="method public "><a href="#method_createFile" title="createFile() :: Create new empty file."><span class="description">Create new empty file.</span><pre>createFile()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete() :: Delete a file or directory."><span class="description">Delete a file or directory.</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_exists" title="exists() :: Checks whether a file or directory exists."><span class="description">Checks whether a file or directory exists.</span><pre>exists()</pre></a></li>
+<li class="method public "><a href="#method_getAccessTime" title="getAccessTime() :: Returns the time of the file named by the given pathname was accessed
+last time."><span class="description">Returns the time of the file named by the given pathname was accessed
+last time.</span><pre>getAccessTime()</pre></a></li>
+<li class="method public "><a href="#method_getContents" title="getContents() :: Get contents of the file. Returns &lt;em&gt;null&lt;/em&gt; if file does not exists
+and &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory)."><span class="description">Get contents of the file. Returns &lt;em&gt;null&lt;/em&gt; if file does not exists
+and &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</span><pre>getContents()</pre></a></li>
+<li class="method public "><a href="#method_getCreationTime" title="getCreationTime() :: Returns the time of the file named by the given pathname at which it was
+created."><span class="description">Returns the time of the file named by the given pathname at which it was
+created.</span><pre>getCreationTime()</pre></a></li>
+<li class="method public "><a href="#method_getFilesystem" title="getFilesystem() :: Returns the filesystem this adapter belongs to."><span class="description">Returns the filesystem this adapter belongs to.</span><pre>getFilesystem()</pre></a></li>
+<li class="method public "><a href="#method_getGroup" title="getGroup() :: Get the group of the file named by the given pathname."><span class="description">Get the group of the file named by the given pathname.</span><pre>getGroup()</pre></a></li>
+<li class="method public "><a href="#method_getIterator" title="getIterator() :: TODO"><span class="description">TODO</span><pre>getIterator()</pre></a></li>
+<li class="method public "><a href="#method_getMode" title="getMode() :: Get the mode of the file named by the given pathname."><span class="description">Get the mode of the file named by the given pathname.</span><pre>getMode()</pre></a></li>
+<li class="method public "><a href="#method_getModifyTime" title="getModifyTime() :: Returns the time of the file named by the given pathname was modified
+last time."><span class="description">Returns the time of the file named by the given pathname was modified
+last time.</span><pre>getModifyTime()</pre></a></li>
+<li class="method public "><a href="#method_getOwner" title="getOwner() :: Get the owner of the file named by the given pathname."><span class="description">Get the owner of the file named by the given pathname.</span><pre>getOwner()</pre></a></li>
+<li class="method public "><a href="#method_getParentAdapter" title="getParentAdapter() :: Returns the parent adapter of this adapter, if any."><span class="description">Returns the parent adapter of this adapter, if any.</span><pre>getParentAdapter()</pre></a></li>
+<li class="method public "><a href="#method_getRootAdapter" title="getRootAdapter() :: Returns the root adapter of the filesystem this adapter belongs to."><span class="description">Returns the root adapter of the filesystem this adapter belongs to.</span><pre>getRootAdapter()</pre></a></li>
+<li class="method public "><a href="#method_getSize" title="getSize() :: Get the size of the file named by the given pathname."><span class="description">Get the size of the file named by the given pathname.</span><pre>getSize()</pre></a></li>
+<li class="method public "><a href="#method_getStream" title="getStream() :: Gets an stream for the file. May return &lt;em&gt;null&lt;/em&gt; if streaming is not supported."><span class="description">Gets an stream for the file. May return &lt;em&gt;null&lt;/em&gt; if streaming is not supported.</span><pre>getStream()</pre></a></li>
+<li class="method public "><a href="#method_getStreamURL" title="getStreamURL() :: Get the real url, e.g. file:/real/path/to/file to the pathname."><span class="description">Get the real url, e.g. file:/real/path/to/file to the pathname.</span><pre>getStreamURL()</pre></a></li>
+<li class="method public "><a href="#method_isDirectory" title="isDirectory() :: Tests whether the file denoted by the given pathname exists and is a
+directory."><span class="description">Tests whether the file denoted by the given pathname exists and is a
+directory.</span><pre>isDirectory()</pre></a></li>
+<li class="method public "><a href="#method_isExecutable" title="isExecutable() :: Tests whether the file named by the given pathname is executeable."><span class="description">Tests whether the file named by the given pathname is executeable.</span><pre>isExecutable()</pre></a></li>
+<li class="method public "><a href="#method_isFile" title="isFile() :: Tests whether the file denoted by the given pathname exists and is a
+file."><span class="description">Tests whether the file denoted by the given pathname exists and is a
+file.</span><pre>isFile()</pre></a></li>
+<li class="method public "><a href="#method_isLink" title="isLink() :: Tests whether the file denoted by the given pathname exists and is a
+link."><span class="description">Tests whether the file denoted by the given pathname exists and is a
+link.</span><pre>isLink()</pre></a></li>
+<li class="method public "><a href="#method_isReadable" title="isReadable() :: Tests whether the file named by the given pathname is readable."><span class="description">Tests whether the file named by the given pathname is readable.</span><pre>isReadable()</pre></a></li>
+<li class="method public "><a href="#method_isWritable" title="isWritable() :: Tests whether the file named by the given pathname is writable."><span class="description">Tests whether the file named by the given pathname is writable.</span><pre>isWritable()</pre></a></li>
+<li class="method public "><a href="#method_ls" title="ls() :: Returns all filenames of all (direct) children."><span class="description">Returns all filenames of all (direct) children.</span><pre>ls()</pre></a></li>
+<li class="method public "><a href="#method_moveFrom" title="moveFrom() :: Renames a file or directory"><span class="description">Renames a file or directory</span><pre>moveFrom()</pre></a></li>
+<li class="method public "><a href="#method_moveTo" title="moveTo() :: Renames a file or directory"><span class="description">Renames a file or directory</span><pre>moveTo()</pre></a></li>
+<li class="method public "><a href="#method_resolveLocal" title="resolveLocal() :: Resolve the local path"><span class="description">Resolve the local path</span><pre>resolveLocal()</pre></a></li>
+<li class="method public "><a href="#method_setAccessTime" title="setAccessTime() :: Sets the access time of the file named by the given pathname."><span class="description">Sets the access time of the file named by the given pathname.</span><pre>setAccessTime()</pre></a></li>
+<li class="method public "><a href="#method_setContents" title="setContents() :: Write contents to a file. Returns &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory)."><span class="description">Write contents to a file. Returns &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</span><pre>setContents()</pre></a></li>
+<li class="method public "><a href="#method_setFilesystem" title="setFilesystem() :: Set the filesystem this adapter belongs to."><span class="description">Set the filesystem this adapter belongs to.</span><pre>setFilesystem()</pre></a></li>
+<li class="method public "><a href="#method_setGroup" title="setGroup() :: Change the group of the file named by the given pathname."><span class="description">Change the group of the file named by the given pathname.</span><pre>setGroup()</pre></a></li>
+<li class="method public "><a href="#method_setMode" title="setMode() :: Set the mode of the file named by the given pathname."><span class="description">Set the mode of the file named by the given pathname.</span><pre>setMode()</pre></a></li>
+<li class="method public "><a href="#method_setModifyTime" title="setModifyTime() :: Sets the modify time of the file named by the given pathname."><span class="description">Sets the modify time of the file named by the given pathname.</span><pre>setModifyTime()</pre></a></li>
+<li class="method public "><a href="#method_setOwner" title="setOwner() :: Set the owner of the file named by the given pathname."><span class="description">Set the owner of the file named by the given pathname.</span><pre>setOwner()</pre></a></li>
+<li class="method public "><a href="#method_setParentAdapter" title="setParentAdapter() :: Set the parent adapter for this adapter."><span class="description">Set the parent adapter for this adapter.</span><pre>setParentAdapter()</pre></a></li>
+<li class="method public "><a href="#method_touch" title="touch() :: Sets access and modify time of file, optionally creating the file, if it
+does not exists yet."><span class="description">Sets access and modify time of file, optionally creating the file, if it
+does not exists yet.</span><pre>touch()</pre></a></li>
+<li class="method public "><a href="#method_truncate" title="truncate() :: Truncate a file to a given length. Returns the new length or
+&lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory)."><span class="description">Truncate a file to a given length. Returns the new length or
+&lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</span><pre>truncate()</pre></a></li>
+</ul>
+</li></ul>
+</div>
+<div class="span8">
+<a id="\Filicious\Internals\Adapter"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Filicious.html">Filicious</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Filicious.Internals.html">Internals</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Filicious.Internals.Adapter.html">Adapter</a>
+</li>
+</ul>
+<div class="element interface">
+<p class="short_description">The adapter provide direct access to the native filesystem.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/filicious-core.html">filicious-core</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:c.schiffler@cyberspectrum.de">Christian Schiffler</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:tristan.lins@bit3.de">Tristan Lins</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:oliver@hofff.com">Oliver Hoff</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_appendContents"></a><div class="element clickable method public method_appendContents" data-toggle="collapse" data-target=".method_appendContents .collapse">
+<h2>Write contents to a file. Returns &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</h2>
+<pre>appendContents(\Filicious\Internals\Pathname $pathname, string $content, bool $create) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$create</h4>
+<code>bool</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists and $create is set to false</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_copyFrom"></a><div class="element clickable method public method_copyFrom" data-toggle="collapse" data-target=".method_copyFrom .collapse">
+<h2>Copies file</h2>
+<pre>copyFrom(\Filicious\Internals\Pathname $dstPathname, \Filicious\Internals\Pathname $srcPathname, int $flags) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description">TODO list valid flags</div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dstPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$srcPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname of the source from which will be copied</p></div>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>int</code><p>Flags to control the operations behavior</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does already exists and the OVERWRITE_REJECT flag is set</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_copyTo"></a><div class="element clickable method public method_copyTo" data-toggle="collapse" data-target=".method_copyTo .collapse">
+<h2>Copies file</h2>
+<pre>copyTo(\Filicious\Internals\Pathname $srcPathname, \Filicious\Internals\Pathname $dstPathname, int $flags) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description">TODO list valid flags</div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$srcPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$dstPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted destination pathname</p></div>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>int</code><p>Flags to control the operations behavior</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>TODO</h2>
+<pre>count(\Filicious\Internals\Pathname $pathname, array $filter) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>array</code><p>An array of filters to apply</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists or is not a directory</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The amount of child nodes of the pathname</div>
+</div></div>
+</div>
+<a id="method_createDirectory"></a><div class="element clickable method public method_createDirectory" data-toggle="collapse" data-target=".method_createDirectory .collapse">
+<h2>Makes directory</h2>
+<pre>createDirectory(\Filicious\Internals\Pathname $pathname, bool $parents) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$parents</h4>
+<code>bool</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does already exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_createFile"></a><div class="element clickable method public method_createFile" data-toggle="collapse" data-target=".method_createFile .collapse">
+<h2>Create new empty file.</h2>
+<pre>createFile(\Filicious\Internals\Pathname $pathname, bool $parents) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$parents</h4>
+<code>bool</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does already exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Delete a file or directory.</h2>
+<pre>delete(\Filicious\Internals\Pathname $pathname, bool $recursive, bool $force) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$recursive</h4>
+<code>bool</code>
+</div>
+<div class="subelement argument">
+<h4>$force</h4>
+<code>bool</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_exists"></a><div class="element clickable method public method_exists" data-toggle="collapse" data-target=".method_exists .collapse">
+<h2>Checks whether a file or directory exists.</h2>
+<pre>exists(\Filicious\Internals\Pathname $pathname) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_getAccessTime"></a><div class="element clickable method public method_getAccessTime" data-toggle="collapse" data-target=".method_getAccessTime .collapse">
+<h2>Returns the time of the file named by the given pathname was accessed
+last time.</h2>
+<pre>getAccessTime(\Filicious\Internals\Pathname $pathname) : <a href="DateTime.html">\DateTime</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="DateTime.html">\DateTime</a></code></div>
+</div></div>
+</div>
+<a id="method_getContents"></a><div class="element clickable method public method_getContents" data-toggle="collapse" data-target=".method_getContents .collapse">
+<h2>Get contents of the file. Returns &lt;em&gt;null&lt;/em&gt; if file does not exists
+and &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</h2>
+<pre>getContents(\Filicious\Internals\Pathname $pathname) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getCreationTime"></a><div class="element clickable method public method_getCreationTime" data-toggle="collapse" data-target=".method_getCreationTime .collapse">
+<h2>Returns the time of the file named by the given pathname at which it was
+created.</h2>
+<pre>getCreationTime(\Filicious\Internals\Pathname $pathname) : <a href="DateTime.html">\DateTime</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="DateTime.html">\DateTime</a></code>The creation time of the file</div>
+</div></div>
+</div>
+<a id="method_getFilesystem"></a><div class="element clickable method public method_getFilesystem" data-toggle="collapse" data-target=".method_getFilesystem .collapse">
+<h2>Returns the filesystem this adapter belongs to.</h2>
+<pre>getFilesystem() : <a href="../classes/Filicious.Filesystem.html">\Filicious\Filesystem</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Filicious.Filesystem.html">\Filicious\Filesystem</a></code>The filesystem this adapter belongs to</div>
+</div></div>
+</div>
+<a id="method_getGroup"></a><div class="element clickable method public method_getGroup" data-toggle="collapse" data-target=".method_getGroup .collapse">
+<h2>Get the group of the file named by the given pathname.</h2>
+<pre>getGroup(\Filicious\Internals\Pathname $pathname) : string | int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_getIterator"></a><div class="element clickable method public method_getIterator" data-toggle="collapse" data-target=".method_getIterator .collapse">
+<h2>TODO</h2>
+<pre>getIterator(\Filicious\Internals\Pathname $pathname, array $filter) : <a href="Iterator.html">\Iterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>array</code><p>An array of filters to apply</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists or is not a  directory</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="Iterator.html">\Iterator</a></code>An iterator which iterates over the matched child nodes</div>
+</div></div>
+</div>
+<a id="method_getMode"></a><div class="element clickable method public method_getMode" data-toggle="collapse" data-target=".method_getMode .collapse">
+<h2>Get the mode of the file named by the given pathname.</h2>
+<pre>getMode(\Filicious\Internals\Pathname $pathname) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>TODO mode representation type?</div>
+</div></div>
+</div>
+<a id="method_getModifyTime"></a><div class="element clickable method public method_getModifyTime" data-toggle="collapse" data-target=".method_getModifyTime .collapse">
+<h2>Returns the time of the file named by the given pathname was modified
+last time.</h2>
+<pre>getModifyTime(\Filicious\Internals\Pathname $pathname) : <a href="DateTime.html">\DateTime</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="DateTime.html">\DateTime</a></code>The modify time of the file</div>
+</div></div>
+</div>
+<a id="method_getOwner"></a><div class="element clickable method public method_getOwner" data-toggle="collapse" data-target=".method_getOwner .collapse">
+<h2>Get the owner of the file named by the given pathname.</h2>
+<pre>getOwner(\Filicious\Internals\Pathname $pathname) : string | int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_getParentAdapter"></a><div class="element clickable method public method_getParentAdapter" data-toggle="collapse" data-target=".method_getParentAdapter .collapse">
+<h2>Returns the parent adapter of this adapter, if any.</h2>
+<pre>getParentAdapter() : <a href="../classes/Filicious.Internals.Adapter.html">\Filicious\Internals\Adapter</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Filicious.Internals.Adapter.html">\Filicious\Internals\Adapter</a></code><code>null</code>The parent adapter</div>
+</div></div>
+</div>
+<a id="method_getRootAdapter"></a><div class="element clickable method public method_getRootAdapter" data-toggle="collapse" data-target=".method_getRootAdapter .collapse">
+<h2>Returns the root adapter of the filesystem this adapter belongs to.</h2>
+<pre>getRootAdapter() : <a href="../classes/Filicious.Internals.Adapter.html">\Filicious\Internals\Adapter</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Filicious.Internals.Adapter.html">\Filicious\Internals\Adapter</a></code>The filesystems root adapter</div>
+</div></div>
+</div>
+<a id="method_getSize"></a><div class="element clickable method public method_getSize" data-toggle="collapse" data-target=".method_getSize .collapse">
+<h2>Get the size of the file named by the given pathname.</h2>
+<pre>getSize(\Filicious\Internals\Pathname $pathname, bool $recursive) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$recursive</h4>
+<code>bool</code><p>Whether or not to calculate the size of
+                           directories.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The size of the file</div>
+</div></div>
+</div>
+<a id="method_getStream"></a><div class="element clickable method public method_getStream" data-toggle="collapse" data-target=".method_getStream .collapse">
+<h2>Gets an stream for the file. May return &lt;em&gt;null&lt;/em&gt; if streaming is not supported.</h2>
+<pre>getStream(\Filicious\Internals\Pathname $pathname) : <a href="../classes/Filicious.Stream.html">\Filicious\Stream</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Filicious.Stream.html">\Filicious\Stream</a></code></div>
+</div></div>
+</div>
+<a id="method_getStreamURL"></a><div class="element clickable method public method_getStreamURL" data-toggle="collapse" data-target=".method_getStreamURL .collapse">
+<h2>Get the real url, e.g. file:/real/path/to/file to the pathname.</h2>
+<pre>getStreamURL(\Filicious\Internals\Pathname $pathname) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_isDirectory"></a><div class="element clickable method public method_isDirectory" data-toggle="collapse" data-target=".method_isDirectory .collapse">
+<h2>Tests whether the file denoted by the given pathname exists and is a
+directory.</h2>
+<pre>isDirectory(\Filicious\Internals\Pathname $pathname) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>True, if the file exists and is a directory; otherwise false</div>
+</div></div>
+</div>
+<a id="method_isExecutable"></a><div class="element clickable method public method_isExecutable" data-toggle="collapse" data-target=".method_isExecutable .collapse">
+<h2>Tests whether the file named by the given pathname is executeable.</h2>
+<pre>isExecutable(\Filicious\Internals\Pathname $pathname) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>True, if the file exists and is executable; otherwise false</div>
+</div></div>
+</div>
+<a id="method_isFile"></a><div class="element clickable method public method_isFile" data-toggle="collapse" data-target=".method_isFile .collapse">
+<h2>Tests whether the file denoted by the given pathname exists and is a
+file.</h2>
+<pre>isFile(\Filicious\Internals\Pathname $pathname) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>True, if the file exists and is a file; otherwise false</div>
+</div></div>
+</div>
+<a id="method_isLink"></a><div class="element clickable method public method_isLink" data-toggle="collapse" data-target=".method_isLink .collapse">
+<h2>Tests whether the file denoted by the given pathname exists and is a
+link.</h2>
+<pre>isLink(\Filicious\Internals\Pathname $pathname) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>True, if the file exists and is a link; otherwise false</div>
+</div></div>
+</div>
+<a id="method_isReadable"></a><div class="element clickable method public method_isReadable" data-toggle="collapse" data-target=".method_isReadable .collapse">
+<h2>Tests whether the file named by the given pathname is readable.</h2>
+<pre>isReadable(\Filicious\Internals\Pathname $pathname) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>True, if the file exists and is readable; otherwise false</div>
+</div></div>
+</div>
+<a id="method_isWritable"></a><div class="element clickable method public method_isWritable" data-toggle="collapse" data-target=".method_isWritable .collapse">
+<h2>Tests whether the file named by the given pathname is writable.</h2>
+<pre>isWritable(\Filicious\Internals\Pathname $pathname) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>True, if the file exists and is writable; otherwise false</div>
+</div></div>
+</div>
+<a id="method_ls"></a><div class="element clickable method public method_ls" data-toggle="collapse" data-target=".method_ls .collapse">
+<h2>Returns all filenames of all (direct) children.</h2>
+<pre>ls(\Filicious\Internals\Pathname $pathname) : <a href="File%5B%5D.html">\Filicious\File[]</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists or is not a directory</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="File%5B%5D.html">\Filicious\File[]</a></code></div>
+</div></div>
+</div>
+<a id="method_moveFrom"></a><div class="element clickable method public method_moveFrom" data-toggle="collapse" data-target=".method_moveFrom .collapse">
+<h2>Renames a file or directory</h2>
+<pre>moveFrom(\Filicious\Internals\Pathname $dstPathname, \Filicious\Internals\Pathname $srcPathname, int $flags) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description">TODO list valid flags</div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dstPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$srcPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname of the source from which will be copied</p></div>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>int</code><p>Flags to control the operations behavior</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does already exists and the OVERWRITE_REJECT flag is set</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_moveTo"></a><div class="element clickable method public method_moveTo" data-toggle="collapse" data-target=".method_moveTo .collapse">
+<h2>Renames a file or directory</h2>
+<pre>moveTo(\Filicious\Internals\Pathname $srcPathname, \Filicious\Internals\Pathname $dstPathname, int $flags) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description">TODO list valid flags</div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$srcPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$dstPathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted destination pathname</p></div>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>int</code><p>Flags to control the operations behavior</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_resolveLocal"></a><div class="element clickable method public method_resolveLocal" data-toggle="collapse" data-target=".method_resolveLocal .collapse">
+<h2>Resolve the local path</h2>
+<pre>resolveLocal(\Filicious\Internals\Pathname $pathname, \Filicious\Internals\Adapter $localAdapter, string $local) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The pathname to resolve local path from</p></div>
+<div class="subelement argument">
+<h4>$localAdapter</h4>
+<code><a href="../classes/Filicious.Internals.Adapter.html">\Filicious\Internals\Adapter</a></code><p>The local adapter</p></div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>string</code><p>The adapter local path</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setAccessTime"></a><div class="element clickable method public method_setAccessTime" data-toggle="collapse" data-target=".method_setAccessTime .collapse">
+<h2>Sets the access time of the file named by the given pathname.</h2>
+<pre>setAccessTime(\Filicious\Internals\Pathname $pathname, \DateTime $accessTime) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$accessTime</h4>
+<code><a href="DateTime.html">\DateTime</a></code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setContents"></a><div class="element clickable method public method_setContents" data-toggle="collapse" data-target=".method_setContents .collapse">
+<h2>Write contents to a file. Returns &lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</h2>
+<pre>setContents(\Filicious\Internals\Pathname $pathname, string $content, bool $create) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$create</h4>
+<code>bool</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists and $create is set to false</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setFilesystem"></a><div class="element clickable method public method_setFilesystem" data-toggle="collapse" data-target=".method_setFilesystem .collapse">
+<h2>Set the filesystem this adapter belongs to.</h2>
+<pre>setFilesystem(\Filicious\Filesystem $fs) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fs</h4>
+<code><a href="../classes/Filicious.Filesystem.html">\Filicious\Filesystem</a></code><p>The filesystem this adapter belongs to.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setGroup"></a><div class="element clickable method public method_setGroup" data-toggle="collapse" data-target=".method_setGroup .collapse">
+<h2>Change the group of the file named by the given pathname.</h2>
+<pre>setGroup(\Filicious\Internals\Pathname $pathname, mixed $group) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>mixed</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setMode"></a><div class="element clickable method public method_setMode" data-toggle="collapse" data-target=".method_setMode .collapse">
+<h2>Set the mode of the file named by the given pathname.</h2>
+<pre>setMode(\Filicious\Internals\Pathname $pathname, int $mode) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>int</code><p>TODO mode representation type?</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setModifyTime"></a><div class="element clickable method public method_setModifyTime" data-toggle="collapse" data-target=".method_setModifyTime .collapse">
+<h2>Sets the modify time of the file named by the given pathname.</h2>
+<pre>setModifyTime(\Filicious\Internals\Pathname $pathname, \DateTime $modifyTime) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$modifyTime</h4>
+<code><a href="DateTime.html">\DateTime</a></code><p>The new modify time to set</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setOwner"></a><div class="element clickable method public method_setOwner" data-toggle="collapse" data-target=".method_setOwner .collapse">
+<h2>Set the owner of the file named by the given pathname.</h2>
+<pre>setOwner(\Filicious\Internals\Pathname $pathname, string|int $user) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$user</h4>
+<code>string</code><code>int</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_setParentAdapter"></a><div class="element clickable method public method_setParentAdapter" data-toggle="collapse" data-target=".method_setParentAdapter .collapse">
+<h2>Set the parent adapter for this adapter.</h2>
+<pre>setParentAdapter(\Filicious\Internals\Adapter|null $parent) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parent</h4>
+<code><a href="../classes/Filicious.Internals.Adapter.html">\Filicious\Internals\Adapter</a></code><code>null</code><p>The parent adapter</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_touch"></a><div class="element clickable method public method_touch" data-toggle="collapse" data-target=".method_touch .collapse">
+<h2>Sets access and modify time of file, optionally creating the file, if it
+does not exists yet.</h2>
+<pre>touch(\Filicious\Internals\Pathname $pathname, \DateTime $modifyTime, \DateTime $accessTime, bool $create) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$modifyTime</h4>
+<code><a href="DateTime.html">\DateTime</a></code><p>The new modify time to set</p></div>
+<div class="subelement argument">
+<h4>$accessTime</h4>
+<code><a href="DateTime.html">\DateTime</a></code><p>The new access time to set; If null then $modifyTime will be used</p>
+</div>
+<div class="subelement argument">
+<h4>$create</h4>
+<code>bool</code><p>Whether to create the file, if it does not already exists</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists and $create is set to false</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+<a id="method_truncate"></a><div class="element clickable method public method_truncate" data-toggle="collapse" data-target=".method_truncate .collapse">
+<h2>Truncate a file to a given length. Returns the new length or
+&lt;em&gt;false&lt;/em&gt; on error (e.a. if file is a directory).</h2>
+<pre>truncate(\Filicious\Internals\Pathname $pathname, int $size) : static</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathname</h4>
+<code><a href="../classes/Filicious.Internals.Pathname.html">\Filicious\Internals\Pathname</a></code><p>The full abstracted pathname</p></div>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>int</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/Filicious.Exception.FileNotFoundException.html">\Filicious\Exception\FileNotFoundException</a></code></th>
+<td>If the file does not exists</td>
+</tr>
+<tr>
+<th><code><a href="../classes/Filicious.Exception.AdapterException.html">\Filicious\Exception\AdapterException</a></code></th>
+<td>If the access to the underlying filesystem fails due to technical reasons like connection problems or timeouts</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>static</code></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.1.0
+</a> and<br>
+            generated on 2014-08-13T17:02:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>
