@@ -94,7 +94,7 @@ title: Comparison with other cooks!
 			{% capture icon %}{{ filesystem.icon }}{% endcapture %}
 
 			{% if icon != "" %}<i class="fa fa-{{ icon }}"></i>{% endif %}
-			{{ filesystem.title }}{% if url | strip != "" %}
+			{{ filesystem.title }}{% if url != "" %}
 			&nbsp; <a href="{{ url }}"><i class="fa fa-external-link"></i></a>{% endif %}
 		</th>
 	</tr>
