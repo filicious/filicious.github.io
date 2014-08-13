@@ -7,12 +7,11 @@ title: Comparison with other cooks!
 	<p>Why is Filicious the best cook in the kitchen?</p>
 </div>
 
-{% assign cols = site.data.comparison.systems | size | plus: 1 %}
+{% assign cols = site.data.comparison.systems | size %}
 
 <table class="table table-bordered table-fixed">
 	<thead>
 	<tr>
-		<th></th>
 		{% for system in site.data.comparison.systems %}
 		<th><a href="{{ system[1].url }}">{{ system[1].title }}</a></th>
 		{% endfor %}
@@ -24,11 +23,10 @@ title: Comparison with other cooks!
 		<th colspan="{{ cols }}" class="text-center">Abstraction level</th>
 	</tr>
 	<tr class="active">
-		<td></td>
-
 		{% for system in site.data.comparison.systems %}
 		{% assign key = system[0] %}
 		{% assign abstraction = site.data.comparison.abstraction[key] %}
+		{% capture description %}{{ abstraction.description }}{% endcapture %}
 
 		{% if abstraction.support == "full" %}
 			{% assign class = "success" %}
@@ -43,9 +41,10 @@ title: Comparison with other cooks!
 			{% assign class = "active" %}
 			{% capture icon %}<i class="fa fa-circle-o"></i> unknown{% endcapture %}
 		{% endif %}
+
 		<td class="{{ class }}">
-			{{ icon }}<br>
-			{{ abstraction.description | markdownify }}
+			<strong>{{ icon }}</strong><br>
+			{{ description | markdownify }}
 		</td>
 		{% endfor %}
 	</tr>
@@ -57,11 +56,10 @@ title: Comparison with other cooks!
 			&nbsp; <a href="http://php.net/manual/en/wrappers.php"><i class="fa fa-external-link"></i></a></th>
 	</tr>
 	<tr class="active">
-		<td></td>
-
 		{% for system in site.data.comparison.systems %}
 		{% assign key = system[0] %}
 		{% assign streaming = site.data.comparison.streaming[key] %}
+		{% capture description %}{{ streaming.description }}{% endcapture %}
 
 		{% if streaming.support == "full" %}
 			{% assign class = "success" %}
@@ -76,9 +74,10 @@ title: Comparison with other cooks!
 			{% assign class = "active" %}
 			{% capture icon %}<i class="fa fa-circle-o"></i> unknown{% endcapture %}
 		{% endif %}
+
 		<td class="{{ class }}">
-			{{ icon }}<br>
-			{{ streaming.description | markdownify }}
+			<strong>{{ icon }}</strong><br>
+			{{ description | markdownify }}
 		</td>
 		{% endfor %}
 	</tr>
@@ -90,17 +89,20 @@ title: Comparison with other cooks!
 	</tr>
 	{% for filesystem in site.data.comparison.filesystems %}
 	<tr class="active">
-		<td>
-			{% if filesystem.url | strip != "" %}
-			<a href="{{ filesystem.url }}">{{ filesystem.title }}</a>
-			{% else %}
-			{{ filesystem.title }}
-			{% endif %}
-		</td>
+		<th colspan="{{ cols }}" class="text-center">
+			{% capture url %}{{ filesystem.url }}{% endcapture %}
+			{% capture icon %}{{ filesystem.icon }}{% endcapture %}
+
+			{% if icon != "" %}<i class="fa fa-{{ icon }}"></i>{% endif %}
+			{{ filesystem.title }}{% if url | strip != "" %}
+			&nbsp; <a href="{{ url }}"><i class="fa fa-external-link"></i></a>{% endif %}
+		</th>
+	</tr>
+	<tr>
 		{% for system in site.data.comparison.systems %}
 		{% assign key = system[0] %}
 		{% assign capability = filesystem.systems[key] %}
-		{% capture tooltip %}{{ capability.description }}{% endcapture %}
+		{% capture description %}{{ capability.description }}{% endcapture %}
 
 		{% if capability.support == "full" %}
 			{% assign class = "success" %}
@@ -115,10 +117,10 @@ title: Comparison with other cooks!
 			{% assign class = "active" %}
 			{% capture icon %}<i class="fa fa-circle-o"></i> unknown{% endcapture %}
 		{% endif %}
+
 		<td class="{{ class }}">
-			{% if tooltip != "" %}<span data-toggle="tooltip" data-placement="left" title="{{ tooltip }}">{% endif %}
-			{{ icon }}
-			{% if tooltip != "" %}</span>{% endif %}
+			<strong>{{ icon }}</strong><br>
+			{{ description | markdownify }}
 		</td>
 		{% endfor %}
 	</tr>
