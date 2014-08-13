@@ -30,5 +30,4 @@ Most of the API still exists as before.
 - Added stream support directly into the Filesystem class.
 
 I improved and cleaned the public and private API and moved some convenience methods into the Util or the new
-Validator class. After all, the new build is working again :-)
-https://travis-ci.org/filicious/core/builds/32444809
+Validator class. After all, the [new build](https://travis-ci.org/filicious/core/builds/32444809) is working again :-)
