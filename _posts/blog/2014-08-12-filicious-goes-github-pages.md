@@ -1,6 +1,7 @@
 ---
 title: Filicious goes github pages!
 author: Tristan
+tags: [project page]
 ---
 
 I never used github pages with Jekyll before, but after reading the documentation for about an hour, it seems

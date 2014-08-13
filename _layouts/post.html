@@ -1,14 +1,44 @@
 {% include header.html %}
 
-<div class="container">
-	<div class="jumbotron">
-		<h1>{{ page.title }}</h1>
+{% assign author = site.data.authors[page.author] %}
 
-		<p>written on {{ page.date | date_to_long_string }} by
-			<a href="https://github.com/{{ site.data.authors[page.author].github }}">{{ page.author }}</a></p>
+<div class="container blog">
+	<h1>{{ page.title }}</h1>
+
+	<div class="row">
+		<div class="col-md-9">{{ content }}</div>
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					written on {{ page.date | date_to_string }}
+				</div>
+				<div class="panel-body">
+					<p>
+						<a href="https://github.com/{{ author.github }}">
+							<figure class="text-center author">
+								<img src="http://www.gravatar.com/avatar/{{ author.gravatar }}.png?s=640" class="img-circle img-responsive" />
+								<figcaption><span class="label label-info">by {{ page.author }}</span></figcaption>
+							</figure>
+						</a>
+					</p>
+
+					<h2>Tags</h2>
+					<p>
+						{% for tag in page.tags %}
+						<a href="/blog/tags.html#{{ tag }}" class="label label-default">{{ tag }}</a>
+						{% endfor %}
+					</p>
+
+					{% if site.related_posts | size > 0 %}
+					<h2>Related</h2>
+					{% for related in site.related_posts %}
+					<div><i class="fa fa-comments-o"></i> <a href="{{ related.url }}">{{ related.title }}</a></div>
+					{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
 	</div>
-
-	{{ content }}
 
 	<ul class="pager">
 		<li class="previous{% if page.previous == nil %} disabled{% endif %}"><a href="{{ page.previous.url }}">&larr; Older</a></li>

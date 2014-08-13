@@ -34,10 +34,63 @@ body {
 /**
  * Content
  */
-.jumbotron,
-.jumbotron h1 {
+.jumbotron h1,
+.jumbotron p {
 	font-family: 'Allura',cursive;
 }
 .jumbotron p {
 	font-size: 28px;
+}
+.jumbotron figure {
+	float: right;
+	text-align: center;
+
+	img {
+		display: block;
+	}
+	figcaption {
+		position: relative;
+		top: -16px;
+	}
+}
+
+/**
+ * Blog
+ */
+.blog-records {
+	> div {
+		overflow: hidden;
+	}
+	.date {
+		float: left;
+		padding: .66em;
+		background-color: #2c3e50;
+		color: #fff;
+		text-align: center;
+		font-size: .9em;
+		line-height: 1.2em;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-size: 1.33em;
+	}
+	h1, h2, h3, h4, h5, h6, p {
+		margin-left: 70px;
+	}
+	h2 {
+		margin-top: 0;
+	}
+	p {
+		margin-bottom: 0;
+	}
+	.author {
+		margin-left: .5em;
+	}
+}
+.blog {
+	.author {
+		.label {
+			position: relative;
+			top: -16px;
+		}
+	}
 }

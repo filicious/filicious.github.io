@@ -1,6 +1,7 @@
 ---
 title: First alpha release!
 author: Tristan
+tags: [release, alpha, api]
 ---
 
 The first 1.0 alpha release is ready after a great rework.
