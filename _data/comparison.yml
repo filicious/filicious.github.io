@@ -9,6 +9,17 @@ systems:
     title: Gaufrette
     url: https://github.com/KnpLabs/Gaufrette
 
+abstraction:
+  filicious:
+    support: full
+    description: Filicious use a full OOP abstraction for the filesystem and the file objects.
+  php:
+    support: none
+    description: PHP does not use a high level abstraction. It provides functions that are directly mapped on the C libraries.
+  gaufrette:
+    support: partial
+    description: Gaufrette only use OOP for the filesystem. The pathnames are not abstract in general. And the `File` object has extreme limited excess value.
+
 filesystems:
   -
     title: Local filesystem

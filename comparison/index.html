@@ -7,9 +7,9 @@ title: Comparison with other cooks!
 	<p>Why is Filicious the best cook in the kitchen?</p>
 </div>
 
-{% assign cols = 1 + site.data.comparison.systems | size %}
+{% assign cols = site.data.comparison.systems | size | plus: 1 %}
 
-<table class="table">
+<table class="table table-bordered table-fixed">
 	<thead>
 	<tr>
 		<th></th>
@@ -20,7 +20,38 @@ title: Comparison with other cooks!
 	</thead>
 	<tbody>
 	<tr class="info">
-		<th colspan="{{ cols }}">Supported filesystems</th>
+		<th colspan="{{ cols }}" class="text-center">Abstraction level</th>
+	</tr>
+	<tr class="active">
+		<td></td>
+
+		{% for system in site.data.comparison.systems %}
+		{% assign key = system[0] %}
+		{% assign abstraction = site.data.comparison.abstraction[key] %}
+
+		{% if abstraction.support == "full" %}
+			{% assign class = "success" %}
+			{% capture icon %}<i class="fa fa-check-circle-o"></i> full support{% endcapture %}
+		{% elsif abstraction.support == "partial" %}
+			{% assign class = "warning" %}
+			{% capture icon %}<i class="fa fa-dot-circle-o"></i> partial support{% endcapture %}
+		{% elsif abstraction.support == "none" %}
+			{% assign class = "danger" %}
+			{% capture icon %}<i class="fa fa-times-circle-o"></i> no support{% endcapture %}
+		{% else %}
+			{% assign class = "active" %}
+			{% capture icon %}<i class="fa fa-circle-o"></i> unknown{% endcapture %}
+		{% endif %}
+		<td class="{{ class }}">
+			{{ icon }}<br>
+			{{ abstraction.description | markdownify }}
+		</td>
+		{% endfor %}
+	</tr>
+	</tbody>
+
+	<tbody>
+	<tr class="info">
 	</tr>
 	{% for filesystem in site.data.comparison.filesystems %}
 	<tr class="active">
