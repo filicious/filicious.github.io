@@ -20,6 +20,17 @@ abstraction:
     support: partial
     description: Gaufrette only use OOP for the filesystem. The pathnames are not abstract in general. And the `File` object has extreme limited excess value.
 
+streaming:
+  filicious:
+    support: full
+    description: Filicious support full file and directory streaming.
+  php:
+    support: full
+    description: PHP support file and directory streaming at all, but it depends on the native [wrappers](http://php.net/manual/en/wrappers.php).
+  gaufrette:
+    support: partial
+    description: Gaufrette only support file streaming, directory streaming (`mkdir`, `rmdir`, `scan`, and so on) are not supported.
+
 filesystems:
   -
     title: Local filesystem

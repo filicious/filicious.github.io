@@ -18,6 +18,7 @@ title: Comparison with other cooks!
 		{% endfor %}
 	</tr>
 	</thead>
+
 	<tbody>
 	<tr class="info">
 		<th colspan="{{ cols }}" class="text-center">Abstraction level</th>
@@ -52,6 +53,40 @@ title: Comparison with other cooks!
 
 	<tbody>
 	<tr class="info">
+		<th colspan="{{ cols }}" class="text-center">Stream wrapper support
+			&nbsp; <a href="http://php.net/manual/en/wrappers.php"><i class="fa fa-external-link"></i></a></th>
+	</tr>
+	<tr class="active">
+		<td></td>
+
+		{% for system in site.data.comparison.systems %}
+		{% assign key = system[0] %}
+		{% assign streaming = site.data.comparison.streaming[key] %}
+
+		{% if streaming.support == "full" %}
+			{% assign class = "success" %}
+			{% capture icon %}<i class="fa fa-check-circle-o"></i> full support{% endcapture %}
+		{% elsif streaming.support == "partial" %}
+			{% assign class = "warning" %}
+			{% capture icon %}<i class="fa fa-dot-circle-o"></i> partial support{% endcapture %}
+		{% elsif streaming.support == "none" %}
+			{% assign class = "danger" %}
+			{% capture icon %}<i class="fa fa-times-circle-o"></i> no support{% endcapture %}
+		{% else %}
+			{% assign class = "active" %}
+			{% capture icon %}<i class="fa fa-circle-o"></i> unknown{% endcapture %}
+		{% endif %}
+		<td class="{{ class }}">
+			{{ icon }}<br>
+			{{ streaming.description | markdownify }}
+		</td>
+		{% endfor %}
+	</tr>
+	</tbody>
+
+	<tbody>
+	<tr class="info">
+		<th colspan="{{ cols }}" class="text-center">Supported filesystems</th>
 	</tr>
 	{% for filesystem in site.data.comparison.filesystems %}
 	<tr class="active">
