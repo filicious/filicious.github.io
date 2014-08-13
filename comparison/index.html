@@ -7,4 +7,55 @@ title: Comparison with other cooks!
 	<p>Why is Filicious the best cook in the kitchen?</p>
 </div>
 
-<p>ooops, nothing here yet :-(</p>
+{% assign cols = 1 + site.data.comparison.systems | size %}
+
+<table class="table">
+	<thead>
+	<tr>
+		<th></th>
+		{% for system in site.data.comparison.systems %}
+		<th><a href="{{ system[1].url }}">{{ system[1].title }}</a></th>
+		{% endfor %}
+	</tr>
+	</thead>
+	<tbody>
+	<tr class="info">
+		<th colspan="{{ cols }}">Supported filesystems</th>
+	</tr>
+	{% for filesystem in site.data.comparison.filesystems %}
+	<tr class="active">
+		<td>
+			{% if filesystem.url | strip != "" %}
+			<a href="{{ filesystem.url }}">{{ filesystem.title }}</a>
+			{% else %}
+			{{ filesystem.title }}
+			{% endif %}
+		</td>
+		{% for system in site.data.comparison.systems %}
+		{% assign key = system[0] %}
+		{% assign capability = filesystem.systems[key] %}
+		{% capture tooltip %}{{ capability.description }}{% endcapture %}
+
+		{% if capability.support == "full" %}
+			{% assign class = "success" %}
+			{% capture icon %}<i class="fa fa-check-circle-o"></i> full support{% endcapture %}
+		{% elsif capability.support == "partial" %}
+			{% assign class = "warning" %}
+			{% capture icon %}<i class="fa fa-dot-circle-o"></i> partial support{% endcapture %}
+		{% elsif capability.support == "none" %}
+			{% assign class = "danger" %}
+			{% capture icon %}<i class="fa fa-times-circle-o"></i> no support{% endcapture %}
+		{% else %}
+			{% assign class = "active" %}
+			{% capture icon %}<i class="fa fa-circle-o"></i> unknown{% endcapture %}
+		{% endif %}
+		<td class="{{ class }}">
+			{% if tooltip != "" %}<span data-toggle="tooltip" data-placement="left" title="{{ tooltip }}">{% endif %}
+			{{ icon }}
+			{% if tooltip != "" %}</span>{% endif %}
+		</td>
+		{% endfor %}
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>

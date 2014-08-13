@@ -1,0 +1,83 @@
+systems:
+  filicious:
+    title: Filicious
+    url: http://filicious.org
+  php:
+    title: Native PHP
+    url: http://php.net
+  gaufrette:
+    title: Gaufrette
+    url: https://github.com/KnpLabs/Gaufrette
+
+filesystems:
+  -
+    title: Local filesystem
+    systems:
+      filicious:
+        support: full
+        description: Special functions like symlinks available through plugins
+      php:
+        support: full
+      gaufrette:
+        support: partial
+        description: Gaufrette only support basic filesystem functionalities
+  -
+    title: FTP
+    systems:
+      filicious:
+        support: none
+        description: FTP adapter is not implemented yet
+      php:
+        support: partial
+        description: depends on enabled native extension / file wrappers
+      gaufrette:
+        support: partial
+        description: Gaufrette only support basic filesystem functionalities
+  -
+    title: SFTP
+    systems:
+      filicious:
+        support: none
+        description: SFTP adapter is not implemented yet
+      php:
+        support: partial
+        description: depends on enabled native extension / file wrappers
+      gaufrette:
+        support: partial
+        description: Gaufrette only support basic filesystem functionalities
+  -
+    title: Amazon S3
+    url: http://aws.amazon.com/s3/
+    systems:
+      filicious:
+        support: none
+        description: Amazon S3 adapter is not implemented yet
+      php:
+        support: none
+      gaufrette:
+        support: partial
+        description: Gaufrette only support basic filesystem functionalities
+  -
+    title: Dropbox
+    url: http://dropbox.com
+    systems:
+      filicious:
+        support: none
+        description: Dropbox adapter is not implemented yet
+      php:
+        support: none
+      gaufrette:
+        support: partial
+        description: Gaufrette only support basic filesystem functionalities
+  -
+    title: GridFS
+    url: http://docs.mongodb.org/manual/core/gridfs/
+    systems:
+      filicious:
+        support: none
+        description: GridFS adapter is not implemented yet
+      php:
+        support: none
+      gaufrette:
+        support: partial
+        description: Gaufrette only support basic filesystem functionalities
