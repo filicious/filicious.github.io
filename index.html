@@ -14,7 +14,7 @@ title: Filicious - cooking files with flavor!
 use Filicious\Local\LocalAdapter;
 use Filicious\Filesystem;
 
-$adapter    = new LocalAdapter();
+$adapter    = new LocalAdapter('/var/lib/kitchen');
 $filesystem = new Filesystem($adapter);
 
 $cauldron = $filesystem->getFile('/cauldron');
