@@ -19,13 +19,16 @@ body {
 	font-family: 'Allura',cursive;
 	font-size: 32px;
 }
-.navbar-right {
-	> li > a {
-		padding-bottom: 0;
+@media (min-width: 769px) {
+	.navbar-right {
+		> li > a {
+			padding-bottom: 0;
+		}
+		.fa {
+			font-size: 2em;
+			line-height: .66em;
+		}
 	}
-}
-.navbar .fa-2x {
-	line-height: .66em;
 }
 
 /**
