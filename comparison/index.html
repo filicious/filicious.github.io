@@ -30,13 +30,13 @@ title: Comparison with other cooks!
 
 		{% if abstraction.support == "full" %}
 			{% assign class = "success" %}
-			{% capture icon %}<i class="fa fa-check-circle-o"></i> full support{% endcapture %}
+			{% capture icon %}<i class="fa fa-check-circle-o"></i> full abstraction{% endcapture %}
 		{% elsif abstraction.support == "partial" %}
 			{% assign class = "warning" %}
-			{% capture icon %}<i class="fa fa-dot-circle-o"></i> partial support{% endcapture %}
+			{% capture icon %}<i class="fa fa-dot-circle-o"></i> partial abstraction{% endcapture %}
 		{% elsif abstraction.support == "none" %}
 			{% assign class = "danger" %}
-			{% capture icon %}<i class="fa fa-times-circle-o"></i> no support{% endcapture %}
+			{% capture icon %}<i class="fa fa-times-circle-o"></i> no abstraction{% endcapture %}
 		{% else %}
 			{% assign class = "active" %}
 			{% capture icon %}<i class="fa fa-circle-o"></i> unknown{% endcapture %}
