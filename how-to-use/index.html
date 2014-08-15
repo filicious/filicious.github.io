@@ -1,0 +1,222 @@
+---
+title: How to cook files!
+---
+
+<div class="jumbotron">
+	<h1>How to cook files!</h1>
+	<p>Learn how to cook files like a delicious meal :-)</p>
+</div>
+
+<h2>Starting with a new filesystem</h2>
+
+{% highlight php startinline %}
+use Filicious\Local\LocalAdapter;
+use Filicious\Filesystem;
+
+$adapter    = new LocalAdapter('/var/lib/kitchen');
+$filesystem = new Filesystem($adapter);
+{% endhighlight %}
+
+<hr>
+
+<h2>Move or copy files</h2>
+
+<div class="row">
+	<div class="col-md-6">
+		<h3>Move files</h3>
+
+		{% highlight php startinline %}
+$source = $filesystem->getFile('/source.txt');
+$target = $filesystem->getFile('/target.txt');
+
+if (!$target->exists()) {
+  $source->moveTo($target);
+}
+		{% endhighlight %}
+	</div>
+	<div class="col-md-6">
+		<h3>Copy files</h3>
+
+		{% highlight php startinline %}
+$source = $filesystem->getFile('/source.txt');
+$target = $filesystem->getFile('/target.txt');
+
+if (!$target->exists()) {
+  $source->copyTo($target);
+}
+		{% endhighlight %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h3>Move directories</h3>
+
+		{% highlight php startinline %}
+$source = $filesystem->getFile('/source/');
+$target = $filesystem->getFile('/target/');
+
+if (!$target->exists()) {
+  $source->moveTo($target);
+}
+		{% endhighlight %}
+	</div>
+	<div class="col-md-6">
+		<h3>Copy directories</h3>
+
+		{% highlight php startinline %}
+$source = $filesystem->getFile('/source/');
+$target = $filesystem->getFile('/target/');
+
+if (!$target->exists()) {
+  $source->copyTo($target);
+}
+		{% endhighlight %}
+	</div>
+</div>
+
+<h2>Accessing the contents of a filesystem</h2>
+
+<div class="row">
+	<div class="col-md-6">
+		<h3>Listing files in a directory</h3>
+
+		{% highlight php startinline %}
+$dir = $filesystem->getFile('/path');
+
+// list directory contents
+$files = $dir->ls();
+foreach ($files as $file) {
+  echo '- ' . $file->getBasename() . PHP_EOL;
+}
+		{% endhighlight %}
+	</div>
+	<div class="col-md-6">
+		<h3>Reading and writing files</h3>
+
+		{% highlight php startinline %}
+$file = $filesystem->getFile('/world');
+
+// write
+$file->setContents('Hello world!');
+
+// read
+echo $file->getContents(); // outputs "Hello world!"
+		{% endhighlight %}
+	</div>
+</div>
+
+<hr>
+
+<h2>Testing existence and type</h2>
+
+<h3>Listing files in a directory</h3>
+
+{% highlight php startinline %}
+$dir = $filesystem->getFile('/path');
+
+// test existence
+if (!$dir->exists()) {
+  echo 'Path /path does not exists!' . PHP_EOL;
+  exit;
+}
+
+// tip: you can also iterate over a File object :-)
+foreach ($dir as $file) {
+  echo '- ' . $file->getBasename();
+
+  // test if $file a symlink
+  if ($file->hasPlugin('link') && $file->getPlugin('link')->isLink()) {
+    echo ' is a symlink';
+  }
+
+  // test if $file a regular file
+  else if ($file->isFile()) {
+    echo ' is a file';
+  }
+
+  // test if $file a directory
+  else if ($file->isDirectory()) {
+    echo ' is a directory';
+  }
+
+  echo PHP_EOL;
+}
+{% endhighlight %}
+
+<hr>
+
+<h2>Searching files</h2>
+
+<p>The methods <code>File::ls()</code>, <code>File::count()</code> and <code>File::getIterator()</code> accept
+different filter arguments:</p>
+
+<ul>
+	<li>One or more of the
+		<code><a href="http://filicious.org/api/classes/Filicious.File.html#constant_LIST_ALL">File::LIST_*</a></code>
+		constants</li>
+	<li>One or more glob patterns, that are accepted by the php <a href="http://php.net/fnmatch">fnmatch</a>
+		function.</li>
+	<li>One or more callbacks, each callback receive the <code>$file</code> object as argument and must
+		return <code>true</code> if the file is accepted, or <code>false</code> if not.</li>
+</ul>
+
+{% highlight php startinline %}
+$dir = $filesystem->getFile('/path');
+
+// count files recursive
+echo $dir->count(File::LIST_RECURSIVE) . ' files and directories found' . PHP_EOL;
+
+// find all TXT files inside of the directory
+foreach ($dir->ls('*.txt') as $file) {
+  echo '- ' . $file->getBasename() . PHP_EOL;
+}
+
+// find images by mime type
+$iterator = $dir->getIterator(
+  function(File $file) {
+    if ($file->isFile() && $file->hasPlugin('mime')) {
+      $mime = $file->getPlugin('mime');
+      return preg_match('~^image/', $mime->getMimeType());
+    }
+
+    return false;
+  }
+);
+foreach ($iterator as $file) {
+  echo '- ' . $file->getBasename() . PHP_EOL;
+}
+{% endhighlight %}
+
+<p>You can also combine any filter.</p>
+
+{% highlight php startinline %}
+$dir = $filesystem->getFile('/path');
+
+$files = $dir->ls(
+  File::LIST_RECURSIVE,
+  '*/images/*',
+  function(File $file) {
+    if ($file->isFile() && $file->hasPlugin('mime')) {
+      $mime = $file->getPlugin('mime');
+      return preg_match('~^image/', $mime->getMimeType());
+    }
+
+    return false;
+  }
+);
+
+foreach ($files as $file) {
+  echo '- ' . $file->getBasename() . PHP_EOL;
+}
+{% endhighlight %}
+
+<h3>Filename vs. pathname globs</h3>
+
+<p>There are two types of glob patterns.
+	<strong>Filename globs</strong> are applied on the filename (<code>File::getBasename()</code>) only.
+	<strong>Pathname globs</strong> are applied on the pathname (<code>File::getPathname()</code>) only.</p>
+
+<p>The decision of glob type is simple.
+	<strong>Filename globs</strong> does not contain a <code>/</code>, e.g. <code>*.txt</code>.
+	<strong>Pathname globs</strong> contains at least one <code>/</code>, e.g. <code>*/images/*</code>.</p>
