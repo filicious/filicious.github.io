@@ -6,6 +6,8 @@ exclude:
   - assets/config.rb
   - assets/sass
 markdown_ext: "md"
+kramdown:
+  input: GFM
 defaults:
   -
     scope:
