@@ -10743,7 +10743,7 @@ adapter can be seen.</long-description>
     </class>
     <source>eJydUktr3DAQPlu/Yg6BbBciF3JrlsSl0OawbQPtMRdbHlvTyJLRY7ch7H/vyN5ta0qgiQ9G38z3GD02N6MehSjXawFruKVeg8EdGnDND1QRnCe0EVvoyGB4DBEHqJsQfa0iOStZlYXVWKuHusdMI0UuhQvlPE6tOkXtPMB3TyHWFrZkA2zijKRhVDUUL2WL1wv+B50pxIpvSlPXGfSwUTKcQKUeG/Rh5DF9Gv6RfzW0Y8Wt6zrYuAlUmkEnlRtmKmc/AH86xvFdWf6eXTrfHwkKbcATYb/fy96m3C6PrVCafjQXl/Kt1HEwsP10t2VpKYStBwx8LAgfT773dyb1ZO8/04BXQqTwd49XXFzWjvz3xwOf4TOkbDr9stGJKZSpQ4BcnkuAPyPaNsDSUzyJIr+Bgnf9VJHV6Cm2Th1ypRTFmBqOgy7Z6dqhx/iF97d6IwpWFh5j8hbOB845vxLFQbzMbvRuRy2GP6Ov8hLO8qtbZvBd4ysSeOD/MLe4h+URrmbWlHgQvwC5AQ1x</source>
   </file>
-  <file path="Plugin/Mime/MimeFilePlugin.php" generated-path="Plugin.Mime.MimeFilePlugin.html" hash="c3542ce3beaa05b89e288a909c395269" package="filicious-core">
+  <file path="Plugin/Mime/MimeFilePlugin.php" generated-path="Plugin.Mime.MimeFilePlugin.html" hash="beacb702d0c01720309424bdf2d06574" package="filicious-core">
     <docblock line="0">
       <description>High level object oriented filesystem abstraction.</description>
       <long-description></long-description>
@@ -10796,7 +10796,7 @@ adapter can be seen.</long-description>
         </docblock>
       </method>
     </class>
-    <source>eJztVcFq20AQPUtfMZhA7FBLgVxK4roOjp0YHNtQ91AIhPVqJG2z2hXaVRwT/O+dlWQnaSi5JNBCfZud92bezDyj3tc8zX0/PDry4QiuRJKCxHuUoFc/kVvQhUBlMYJYSDQbYzEDtjK2YNwKrQJiOeIgZ/yOJehgggtdmi7XBVYpVtpUFwDLQhjLFEyFMtCzdRRIigYrYU+CCPsv8MPUQQQxvvFUxLHEAno8MLtgwDcrLExOMosye0WfS3FPjCsdx9DTVTBIKYgDrrMaSr3vgH6ptflpGO61B7pIGgBHZXAHWK/XQaJKlw6blAllksvuSXAcpDaTML1cTIka+r5iGRpaC8J4V/dmIctEqJtrkeGZ75fmeW5Cay4Uk+bmuxXy7LdswzxvVk8JrJ+oDpfMGHBFn54BHyyqyMBrhv/o+547uEcjXqIFmyJkxAYnGdoYJAG05jmqC83LjM4PS6rW6oCOK6yzQuDYVYVBgbYsFFAboRL3FPpeXq5IOcSlqmwCCdrryfVoRg3aHd979D3vgEUsp5HhCxzYVJhu39Xt9kWzhwWzqarw3b7UnMnzGt/u0MieJ2Jo70uQh8hLHEmgW8P5mhXYwKu1xnSGDriuXqN2R+32nTTiVNLeEEKdPW/rujdV3KVOT/EBeWlx3Azbdm32k7ebvjtKLFSsb1dlHNMoVcKrq5AOd6MJpdudT3XmhR4CDDVpUtbsAePJdDSZjee3s/lsVD1VGr1tlT988s/ogWPuBDVO2seHFfK4xg91KSNQ2kKENHwm1DNnHPp19e2f7GM3+d4+LM+pNXMdwnsVBZoZQf8rMlXUmCqw72SqJbX9b6qPMJXb7u3yx+IjneVM86azUHEdkRF27loJxYpNi75O0KJPDTNciCaycffze7hq1LT8S521l/ePu2s0G84vJrPLD3TYzjzPXLb1fwHPpNEO</source>
+    <source>eJzVVVFL40AQfk5+xVAEW7kmwr0c2utVaquF2hau93AgyHYzSfbc7Ibsxlqk//1mk7TqyeGLgvZtdr5v5puZr6T3I09z3w+Pjnw4gkuRpCDxDiXo1R/kFnQhUFmMIBYSzcZYzICtjC0Yt0KrgFiOOMgZv2UJOpjgQpemy3WBVYqVNtUFwLIQxjIFU6EM9GwdBZKiwUrYr0GE/Wf4Yeogghg/eSriWGIBPR6YXTDgmxUWJieZRZm9oM+luCPGpY5j6OkqGKQUxAHXWQ2l3rdAv9Ta/CQM99oDXSQNgKMyuAOs1+sgUaVLh03KhDLJZfdrcBykNpMwvVhMiRr6vmIZGloLwnhX93ohy0So6yuR4anvl+ZpbkJrLhST5vqXFfL0n2zDPGtWTwmsn6gOl8wYcEUfnwHvLarIwEuG/+D7nju4RyNeoAWbImTEBicZ2hgkAbTmOapzzcuMzg9LqtbqgI4rrLNC4NhVhUGBtiwUUBuhEvcU+l5erkg5xKWqbAIJ2qvJ1WhGDdod33vwPe+ARSynkeE7HNhUmG7f1e32RbOHBbOpqvDdvtScybMa3+7QyJ4nYmjvS5CHyEscSaBbw9maFdjAq7XGdIYOuK5eo3ZH7fadNOJU0l4RQp09b+u6N1XcpU5O8B55aXHcDNt2bfaTt5u+O0osVKxvVmUc0yhVwqurkA53owml250vdeaZHgIMNWlS1uwB48l0NJmN5zez+WxUPVUavW2VP3z0z+ieY+4ENU7ax4cV8rjGD3UpI1DaQoQ0fCbUE2cc+nX17f/sYzf53j4sz6k1cx3COxUFmhlB/ysyVdSYKrBvZKoltf2gpqqkfV5Tue3eLH8v3tNZzjSvOgsV1xEZYeeulVCs2LTo6wQt+tQww4VoIht3v72Fq0ZNyw/qrL28T+6u0Ww4P5/MLt7RYTvzPHHZ1v8LRm/RLw==</source>
   </file>
   <file path="Filesystem.php" generated-path="Filesystem.html" hash="40a5c62d093ca634c71feac76fdc12ef" package="filicious-core">
     <docblock line="0">
