@@ -10687,7 +10687,7 @@ adapter can be seen.</long-description>
     </interface>
     <source>eJx1kk1v2zAMhs/Rr+ChhzZA5QG9rcHmosDWAgFWbD32IiuUpUaWBH3UCLb991FqXKzI5pNJvg/1itTmc9CBsW69ZrCGOzNqsPiCFvzwjDKDjwZdxh0oYzEdUsYJxJByFDIb7zhRFeyDkHsxYpUZaXxJl9JHbCVRsvYR4DGalIWDrXEJNvk14paifjD5iu/w0zv9ra4SQ8QPqY1SFiNsJE9L0MvDgDEFshnLdIJ/s+aFiDuvFGx8C3pNgeLST69SOnsP9Omcw8eue/POfRyPAoku4SKY55mPrtRydyylzo7BXl7xD1znycL268OW0I4xJyZMNBaEL0vfpwdbRuOeaAL7a8ZK+rt2T2OOTlhSiawrTRJTk6o2qczNLCLe7ESg5P1SYT/Zqq5vRYZvNcp9AqMg67YLBJNAwHk6TAPNQF5AvTOv4gb0EXOJDgbvLS2o4ClbgWvwlIyzIceKLGKFO7YKZaCmoIprr4GAavN8uQCchePfBd3lzeV3lEjraOe0FWQRR8ygop9gcdoq6dQpPT3jxl+uWPsfE9SqunhsTf/t5Tf7Axkd/VA=</source>
   </file>
-  <file path="Plugin/Mime/MimePlugin.php" generated-path="Plugin.Mime.MimePlugin.html" hash="7219c9a26f6c617018198ffdbb43f7f6" package="filicious-core">
+  <file path="Plugin/Mime/MimePlugin.php" generated-path="Plugin.Mime.MimePlugin.html" hash="1e164300cc76ccc77eb28e7ceb2eba9e" package="filicious-core">
     <docblock line="0">
       <description>High level object oriented filesystem abstraction.</description>
       <long-description></long-description>
@@ -10698,25 +10698,25 @@ adapter can be seen.</long-description>
       <tag name="link" line="0" description="http://filicious.org" link="http://filicious.org"/>
       <tag name="license" line="0" description="LGPL" link="http://www.gnu.org/licenses/lgpl-3.0.html"/>
     </docblock>
-    <class final="false" abstract="false" namespace="Filicious\Plugin\Hash" line="20" package="filicious-core">
+    <class final="false" abstract="false" namespace="Filicious\Plugin\Mime" line="20" package="filicious-core">
       <extends>\Filicious\Plugin\AbstractPlugin</extends>
       <name>MimePlugin</name>
-      <full_name>\Filicious\Plugin\Hash\MimePlugin</full_name>
+      <full_name>\Filicious\Plugin\Mime\MimePlugin</full_name>
       <docblock line="20">
         <description></description>
         <long-description></long-description>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Filicious\Plugin\Hash" line="25" package="filicious-core">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Filicious\Plugin\Mime" line="25" package="filicious-core">
         <name>getName</name>
-        <full_name>\Filicious\Plugin\Hash\MimePlugin::getName()</full_name>
+        <full_name>\Filicious\Plugin\Mime\MimePlugin::getName()</full_name>
         <docblock line="25">
           <description>{@inheritdoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Filicious\Plugin\Hash" line="33" package="filicious-core">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Filicious\Plugin\Mime" line="33" package="filicious-core">
         <name>providesFilePlugin</name>
-        <full_name>\Filicious\Plugin\Hash\MimePlugin::providesFilePlugin()</full_name>
+        <full_name>\Filicious\Plugin\Mime\MimePlugin::providesFilePlugin()</full_name>
         <docblock line="33">
           <description>{@inheritdoc}</description>
           <long-description></long-description>
@@ -10727,9 +10727,9 @@ adapter can be seen.</long-description>
           <type>\Filicious\File</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Filicious\Plugin\Hash" line="41" package="filicious-core">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Filicious\Plugin\Mime" line="41" package="filicious-core">
         <name>getFilePlugin</name>
-        <full_name>\Filicious\Plugin\Hash\MimePlugin::getFilePlugin()</full_name>
+        <full_name>\Filicious\Plugin\Mime\MimePlugin::getFilePlugin()</full_name>
         <docblock line="41">
           <description>{@inheritdoc}</description>
           <long-description></long-description>
@@ -10741,7 +10741,7 @@ adapter can be seen.</long-description>
         </argument>
       </method>
     </class>
-    <source>eJydUk1PGzEQPa9/xRyQSCPhReLWRGUREuSQtkjtkYvXO7s2eO2VP5IilP/e8W4CpFWlgg+W38x788ZjLy8HNTBWzucM5rDSnQKDGzTg6geUEZzXaCM20GqD4SlE7EHUIXoho3aWkyoLq0HIR9FhpmmpXQpn0nkcUyJF5TzAT69DFBbW2gZYxglxQ6iqdbzgDX454l+rTNGk+CGVbluDHpaShwOo5FONPgzUpk/9X/LvRm9IsXJtC0s3gkoRaLl0/UQl70egpWIcPpflS+/c+W5PkGgDHgjb7ZZ3NuV0uU+F0nSDObvg51zF3sD69m5N0pIxK3oMNBaEm0Pd+zuTOm3vVyKoBWMpvM3RCRd/xPb8q/3AJ/gP0lfd47jlQgcmk0aEADk8hQB/RbRNgOOa7JkV+Q8UdOvnSluFXsfGyV2OlKwYUk120CY7Pjt0GL/R/WafWEHKwmNM3sJpTz6nC1bs2PvKDd5tdIPhtfVZPsJJ/nXHHvTW+AEHavg/ilvcwvEIZxNrdNyx37IQDW0=</source>
+    <source>eJydUktr3DAQPlu/Yg6BbBciF3JrlsSl0OawbQPtMRdbHlvTyJLRY7ch7H/vyN5ta0qgiQ9G38z3GD02N6MehSjXawFruKVeg8EdGnDND1QRnCe0EVvoyGB4DBEHqJsQfa0iOStZlYXVWKuHusdMI0UuhQvlPE6tOkXtPMB3TyHWFrZkA2zijKRhVDUUL2WL1wv+B50pxIpvSlPXGfSwUTKcQKUeG/Rh5DF9Gv6RfzW0Y8Wt6zrYuAlUmkEnlRtmKmc/AH86xvFdWf6eXTrfHwkKbcATYb/fy96m3C6PrVCafjQXl/Kt1HEwsP10t2VpKYStBwx8LAgfT773dyb1ZO8/04BXQqTwd49XXFzWjvz3xwOf4TOkbDr9stGJKZSpQ4BcnkuAPyPaNsDSUzyJIr+Bgnf9VJHV6Cm2Th1ypRTFmBqOgy7Z6dqhx/iF97d6IwpWFh5j8hbOB845vxLFQbzMbvRuRy2GP6Ov8hLO8qtbZvBd4ysSeOD/MLe4h+URrmbWlHgQvwC5AQ1x</source>
   </file>
   <file path="Plugin/Mime/MimeFilePlugin.php" generated-path="Plugin.Mime.MimeFilePlugin.html" hash="c3542ce3beaa05b89e288a909c395269" package="filicious-core">
     <docblock line="0">

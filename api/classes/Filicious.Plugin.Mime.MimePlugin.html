@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>filicious/core » \Filicious\Event\MoveEvent</title>
+<title>filicious/core » \Filicious\Plugin\Mime\MimePlugin</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -52,41 +52,29 @@
 <span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
 </div>
-<ul class="side-nav nav nav-list">
-<li class="nav-header">
+<ul class="side-nav nav nav-list"><li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_getOverwrite" title="getOverwrite() :: "><span class="description">getOverwrite()
-        </span><pre>getOverwrite()</pre></a></li>
-<li class="method public "><a href="#method_isParents" title="isParents() :: "><span class="description">isParents()
-        </span><pre>isParents()</pre></a></li>
+<li class="method public "><a href="#method_getFilePlugin" title="getFilePlugin() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>getFilePlugin()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#method_providesFilePlugin" title="providesFilePlugin() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>providesFilePlugin()</pre></a></li>
 </ul>
-</li>
-<li class="nav-header">
-<i class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul>
-<li class="property protected "><a href="#property_overwrite" title="$overwrite() :: "><span class="description"></span><pre>$overwrite</pre></a></li>
-<li class="property protected "><a href="#property_parents" title="$parents() :: "><span class="description"></span><pre>$parents</pre></a></li>
-</ul>
-</li>
-</ul>
+</li></ul>
 </div>
 <div class="span8">
-<a id="\Filicious\Event\MoveEvent"></a><ul class="breadcrumb">
+<a id="\Filicious\Plugin\Mime\MimePlugin"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/Filicious.html">Filicious</a></li>
 <li>
-<span class="divider">\</span><a href="../namespaces/Filicious.Event.html">Event</a>
+<span class="divider">\</span><a href="../namespaces/Filicious.Plugin.html">Plugin</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Filicious.Plugin.Mime.html">Mime</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Filicious.Event.MoveEvent.html">MoveEvent</a>
+<span class="divider">\</span><a href="../classes/Filicious.Plugin.Mime.MimePlugin.html">MimePlugin</a>
 </li>
 </ul>
 <div class="element class">
@@ -95,56 +83,31 @@
 <div class="long_description"></div>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>__construct()
-        </h2>
-<pre>__construct(\Filicious\Filesystem $filesystem, \Filicious\File $source, \Filicious\File $destination, $overwrite, $parents) </pre>
+<a id="method_getFilePlugin"></a><div class="element clickable method public method_getFilePlugin" data-toggle="collapse" data-target=".method_getFilePlugin .collapse">
+<h2>{@inheritdoc}</h2>
+<pre>getFilePlugin(\Filicious\File $file) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$filesystem</h4></div>
-<div class="subelement argument"><h4>$source</h4></div>
-<div class="subelement argument"><h4>$destination</h4></div>
-<div class="subelement argument"><h4>$overwrite</h4></div>
-<div class="subelement argument"><h4>$parents</h4></div>
+<div class="subelement argument"><h4>$file</h4></div>
 </div></div>
 </div>
-<a id="method_getOverwrite"></a><div class="element clickable method public method_getOverwrite" data-toggle="collapse" data-target=".method_getOverwrite .collapse">
-<h2>getOverwrite()
-        </h2>
-<pre>getOverwrite() : int</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>int</code></div>
-</div></div>
-</div>
-<a id="method_isParents"></a><div class="element clickable method public method_isParents" data-toggle="collapse" data-target=".method_isParents .collapse">
-<h2>isParents()
-        </h2>
-<pre>isParents() : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>boolean</code></div>
-</div></div>
-</div>
-<h3>
-<i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_overwrite"> </a><div class="element clickable property protected property_overwrite" data-toggle="collapse" data-target=".property_overwrite .collapse">
-<h2>$overwrite</h2>
-<pre>$overwrite : int</pre>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>{@inheritdoc}</h2>
+<pre>getName() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_parents"> </a><div class="element clickable property protected property_parents" data-toggle="collapse" data-target=".property_parents .collapse">
-<h2>$parents</h2>
-<pre>$parents : bool</pre>
+<a id="method_providesFilePlugin"></a><div class="element clickable method public method_providesFilePlugin" data-toggle="collapse" data-target=".method_providesFilePlugin .collapse">
+<h2>{@inheritdoc}</h2>
+<pre>providesFilePlugin(\Filicious\File $file) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file</h4></div>
+</div></div>
 </div>
 </div>
 </div>
